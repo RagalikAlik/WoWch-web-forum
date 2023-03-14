@@ -1,0 +1,52 @@
+﻿@page "/registration"
+@using Microsoft.EntityFrameworkCore;
+@using Npgsql;
+
+<head>
+    <link rel="stylesheet" href="css/Registration.css">
+</head>
+
+<body>
+    <div class="reg-body">
+        <div class="reg-items">
+            <h2>Регистрация</h2>
+            <form method="post" asp-action="WriteThemeToDB()">
+                <div>
+                    <input type="text" id="Login" placeholder="Логин">
+                </div>
+                <div>
+                    <input type="email" id="Email" placeholder="Электронная почта">
+                </div>
+                <div>
+                    <input type="password" id="Password" placeholder="Пароль">
+                </div>
+                <div>
+                    <input type="password" id="RepeatPassword" placeholder="Подтвердите пароль">
+                </div>
+                <div>
+                    <input class="reg-button" type="submit" value="Отправить" @onclick="WriteThemeToDB" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+
+@code{
+    public void WriteThemeToDB()
+    {
+        const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
+
+        NpgsqlConnection conn = new NpgsqlConnection(link1);
+        conn.ConnectionString = link1;
+
+        conn.Open();
+        NpgsqlCommand cmd = new NpgsqlCommand();
+        cmd.CommandText = "INSERT INTO themes(HEADER, RELEASEDATE, CREATOR, TEXT) VALUES ('я люблю котлеты', '11/03/2023', 'xtc', 'я люблю котлеты, это моя любимая еда');";
+        cmd.Connection = conn;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+}
