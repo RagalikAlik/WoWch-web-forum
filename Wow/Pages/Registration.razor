@@ -17,13 +17,13 @@
                     <input type="text" @bind="login" placeholder="Логин">
                 </div>
                 <div>
-                    <input type="email"  @bind="email" placeholder="Электронная почта">
+                    <input type="email"  @bind="email"  placeholder="Электронная почта">
                 </div>
                 <div>
                     <input type="password" @bind="password" placeholder="Пароль">
                 </div>
                 <div>
-                    <input class="reg-button" type="submit" value="Отправить" @onclick="WriteThemeToDB" />
+                    <input class="reg-button" type="submit " value="Отправить" @onclick="WriteThemeToDB" />
                 </div>
             </form>
 
@@ -46,7 +46,9 @@
 
         conn.Open();
         NpgsqlCommand cmd = new NpgsqlCommand();
+
         //cmd.CommandText = "INSERT INTO themes(HEADER, RELEASEDATE, CREATOR, TEXT) VALUES ('я люблю котлеты', '11/03/2023', 'xtc', 'я люблю котлеты, это моя любимая еда');";
+       
         cmd.CommandText = $"INSERT INTO users(LOGIN, PASSWORD, EMAIL, REGISTRATIONDATE) VALUES('{login}', '{password}', '{email}', '{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day}');";
         cmd.Connection = conn;
         cmd.ExecuteNonQuery();
