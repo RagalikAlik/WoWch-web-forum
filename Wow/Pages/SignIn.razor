@@ -1,0 +1,29 @@
+﻿@page "/signin"
+
+<head>
+    <link rel="stylesheet" href="css/Registration.css">
+</head>
+<body>
+    <div class="reg-body">
+        <div class="reg-items">
+            <h2>Авторизация</h2>
+            <form method="post">
+                <div>
+                    <input type="text" @bind="login" placeholder="Логин">
+                </div>
+                <div>
+                    <input type="password" @bind="password" placeholder="Пароль">
+                </div>
+                <div>
+                    <input class="reg-button" type="submit " value="Войти"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+@code{
+    private string? login;
+    private string? password;
+
+}

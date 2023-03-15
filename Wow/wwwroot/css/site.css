@@ -137,3 +137,8 @@ a, .btn-link {
 .footer-container {
     padding-bottom: 90px;
 }
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+}

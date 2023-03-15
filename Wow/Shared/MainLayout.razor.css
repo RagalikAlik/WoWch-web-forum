@@ -68,3 +68,9 @@ main {
         padding-right: 1.5rem !important;
     }
 }
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+}
+

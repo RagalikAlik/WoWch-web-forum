@@ -69,6 +69,12 @@ main[b-unjxoggpuf] {
         padding-right: 1.5rem !important;
     }
 }
+
+.nav-items[b-unjxoggpuf] {
+    display: flex;
+    flex-direction: row;
+}
+
 /* _content/Wow/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-k539n4nc43] {
     background-color: rgba(255, 255, 255, 0.1);
