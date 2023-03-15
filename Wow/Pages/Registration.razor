@@ -38,11 +38,10 @@
     private string? login;
     private string? email;
     private string? password;
+    private const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
 
     public void WriteThemeToDB()
     {
-        const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
-
         NpgsqlConnection conn = new NpgsqlConnection(link1);
         conn.ConnectionString = link1;
 
