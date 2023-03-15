@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-namespace Wow
+namespace Wow.Models
 {
     public class User
     {
@@ -9,7 +9,7 @@ namespace Wow
         public string Password { get; set; }
         public string Email { get; set; }
         public DateTime RegistrationDate { get; set; }
-        
+
         public void GetUserFromDb()
         {
 
