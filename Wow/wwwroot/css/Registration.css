@@ -13,8 +13,18 @@
 .input-field{
 }
 
-.reg-button{
+.reg-button {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    border: black solid 2px;
+    width: 19.5%;
+    margin-right: 0.625%;
+    text-align: center;
+}
 
+.reg-button:hover{
+    background-color: orange;
 }
 
 .input-container {

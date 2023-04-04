@@ -1,6 +1,9 @@
 ﻿@page "/registration"
 @using Microsoft.EntityFrameworkCore;
 @using Npgsql;
+@using Wow.Models;
+@using Wow.Controllers;
+@inject NavigationManager Navigation
 
 <head>
     <link rel="stylesheet" href="css/Registration.css">
@@ -21,10 +24,10 @@
                     <input class="input-field" type="password" @bind="password" placeholder="Пароль">
                 </div>
                 <div>
-                    <input class="reg-button" type="submit" value="Зарегистрироваться" @onclick="WriteThemeToDB" />
+                    <a class="reg-button" href="" @onclick="Reg">Зарегистрироваться</a>
                 </div>
                 <div >
-                    <input class="reg-button" type="submit" value="Войти"/>
+                    <a class="reg-button" href="" >Войти</a>
                 </div>
             </form>
 
@@ -34,25 +37,15 @@
 
 
 @code{
-    private string? login;
-    private string? email;
-    private string? password;
+    private static string login;
+    private static string email;
+    private static string password;
     private const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
 
-    public void WriteThemeToDB()
+
+    void Reg()
     {
-        NpgsqlConnection conn = new NpgsqlConnection(link1);
-        conn.ConnectionString = link1;
-
-        conn.Open();
-        NpgsqlCommand cmd = new NpgsqlCommand();
-
-        //cmd.CommandText = "INSERT INTO themes(HEADER, RELEASEDATE, CREATOR, TEXT) VALUES ('я люблю котлеты', '11/03/2023', 'xtc', 'я люблю котлеты, это моя любимая еда');";
-       
-        cmd.CommandText = $"INSERT INTO users(LOGIN, PASSWORD, EMAIL, REGISTRATIONDATE) VALUES('{login}', '{password}', '{email}', '{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day}');";
-        cmd.Connection = conn;
-        cmd.ExecuteNonQuery();
-        conn.Close();
+        AccountController.Register(login, password, email);
+        Navigation.NavigateTo("/");
     }
-
 }

@@ -15,6 +15,15 @@ namespace Wow.Models
 
         }
 
+        public User(int id, string login, string password, string email, DateTime registrationDate)
+        {
+            Id = id;
+            Login = login;
+            Password = password;
+            Email = email;
+            RegistrationDate = registrationDate;
+        }
+
         public void WriteUserToDb(string login, string password, string email, DateTime date)
         {
             const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";

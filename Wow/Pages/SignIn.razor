@@ -1,11 +1,14 @@
 ﻿@page "/signin"
 @using Npgsql;
 @using Microsoft.EntityFrameworkCore;
+@inject NavigationManager Navigation
+
 <head>
     <link rel="stylesheet" href="css/Registration.css">
 </head>
 <body>
-    <div style="width:100%; height: 100%;  background: url(..\\Media\\seks.jpg) no-repeat; background-size: 100%">
+    @*style="width:100%; height: 100%;  background: url(..\\Media\\seks.jpg) no-repeat; background-size: 100%"*@
+    <div>
         <div style="margin-left: 40%">
         <h2>Авторизация</h2>
             <form method="post">
@@ -16,7 +19,7 @@
                     <input class="input-field" type="password" @bind="password" placeholder="Пароль">
                 </div>
                 <div class="input-button-container">
-                    <input class="reg-button" type="submit" @onclick="GetUserFromDb" value="Войти" />
+                    <input class="reg-button" type="submit" @onclick="GoReg" value="Войти" />
                 </div>
             </form>
          </div>
@@ -38,5 +41,10 @@
         cmd.Connection = conn;
         cmd.ExecuteNonQuery();
         conn.Close();
+    }
+
+    private void GoReg()
+    {
+        Navigation.NavigateTo("/registration");
     }
 }
