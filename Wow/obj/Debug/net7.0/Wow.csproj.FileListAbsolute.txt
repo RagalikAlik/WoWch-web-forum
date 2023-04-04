@@ -21,9 +21,7 @@ C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\staticwebassets\msbuild.bui
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\scopedcss\bundle\Wow.styles.css
-C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\scopedcss\projectbundle\Wow.bundle.scp.css
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\Wow.dll
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\refint\Wow.dll
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\Wow.pdb

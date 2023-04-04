@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9lrn7SVLwzXYYrfKdzvCH+O/OqjJGxkHy+Qe/XEeDyI=",
+  "Hash": "pTiJqxOIZEAz+ChNPEl79Q5l5OR1S2hjo90qpn/R2Rc=",
   "Source": "Wow",
   "BasePath": "_content/Wow",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Wow.styles.css",
-      "SourceId": "Wow",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/Wow",
-      "RelativePath": "Wow.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Wow.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Wow.bundle.scp.css",
-      "SourceId": "Wow",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/Wow",
-      "RelativePath": "Wow.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Wow.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Wow",

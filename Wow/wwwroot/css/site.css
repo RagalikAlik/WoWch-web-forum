@@ -141,9 +141,24 @@ a, .btn-link {
 .nav-items {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.logo-container{
+    float:left;
 }
 
 .logo {
-    width: 4%;
-    height: 4%;
+    height: 50px;
+    width: 60px;
+}
+
+.links{
+    float: right;
+    width: 93%;
+}
+
+.links > a{
+    float:right;
+    margin-right:1%;
 }

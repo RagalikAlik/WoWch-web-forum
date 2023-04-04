@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Wow.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Wow.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\Media\\SignInBackground.gif",
       "PackagePath": "staticwebassets\\Media\\SignInBackground.gif"
     },

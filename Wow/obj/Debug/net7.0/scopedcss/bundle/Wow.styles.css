@@ -3,10 +3,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 main[b-unjxoggpuf] {
     flex: 1;
+    height: 100%;
 }
 
 .sidebar[b-unjxoggpuf] {
@@ -70,8 +72,4 @@ main[b-unjxoggpuf] {
     }
 }
 
-.nav-items[b-unjxoggpuf] {
-    display: flex;
-    flex-direction: row;
-}
 
