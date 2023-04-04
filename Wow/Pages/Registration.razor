@@ -6,24 +6,24 @@
     <link rel="stylesheet" href="css/Registration.css">
 </head>
 
-<body>
+<body class="body-back">
     <div class="reg-body">
         <div class="reg-items">
             <h2>Регистрация</h2>
             <form method="post" >
-                <div>
-                    <input type="text" @bind="login" placeholder="Логин">
+                <div class="input-container">
+                    <input class="input-field" type="text" @bind="login" placeholder="Логин">
+                </div>
+                <div class="input-container">
+                    <input class="input-field" type="email" @bind="email" placeholder="Электронная почта">
+                </div>
+                <div class="input-container">
+                    <input class="input-field" type="password" @bind="password" placeholder="Пароль">
                 </div>
                 <div>
-                    <input type="email"  @bind="email"  placeholder="Электронная почта">
+                    <input class="reg-button" type="submit" value="Зарегистрироваться" @onclick="WriteThemeToDB" />
                 </div>
-                <div>
-                    <input type="password" @bind="password" placeholder="Пароль">
-                </div>
-                <div>
-                    <input class="reg-button" type="submit " value="Зарегистрироваться" @onclick="WriteThemeToDB" />
-                </div>
-                <div>
+                <div >
                     <input class="reg-button" type="submit" value="Войти"/>
                 </div>
             </form>

@@ -1,29 +1,42 @@
 ﻿@page "/signin"
-
+@using Npgsql;
+@using Microsoft.EntityFrameworkCore;
 <head>
     <link rel="stylesheet" href="css/Registration.css">
 </head>
-<body>
-    <div class="reg-body">
-        <div class="reg-items">
-            <h2>Авторизация</h2>
+<body >
+    <div>
+        <div style="margin-left: 40%">
+        <h2>Авторизация</h2>
             <form method="post">
-                <div>
-                    <input type="text" @bind="login" placeholder="Логин">
+                <div class="input-container">
+                    <input class="input-field" type="text" @bind="login" placeholder="Логин">
                 </div>
-                <div>
-                    <input type="password" @bind="password" placeholder="Пароль">
+                <div class="input-container">
+                    <input class="input-field" type="password" @bind="password" placeholder="Пароль">
                 </div>
-                <div>
-                    <input class="reg-button" type="submit " value="Войти"/>
+                <div class="input-button-container">
+                    <input class="reg-button" type="submit" @onclick="GetUserFromDb" value="Войти" />
                 </div>
             </form>
-        </div>
+         </div>
     </div>
 </body>
 
 @code{
     private string? login;
     private string? password;
+    private const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
 
+    private void GetUserFromDb()
+    {
+        NpgsqlConnection conn = new NpgsqlConnection();
+        NpgsqlCommand cmd = new NpgsqlCommand();
+        conn.ConnectionString = link1;
+        conn.Open();
+        cmd.CommandText = $"";
+        cmd.Connection = conn;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
 }

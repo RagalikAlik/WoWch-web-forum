@@ -18,4 +18,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Media\SignInBackground.gif" />
+  </ItemGroup>
+
 </Project>

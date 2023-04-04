@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vnfrz1urpn6RV0vW1+35rBvYOg/Xrdm0mKq2JQryJ3Q=",
+  "Hash": "9lrn7SVLwzXYYrfKdzvCH+O/OqjJGxkHy+Qe/XEeDyI=",
   "Source": "Wow",
   "BasePath": "_content/Wow",
   "Mode": "Default",
@@ -304,6 +304,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\Media\\seks.jpg",
+      "SourceId": "Wow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\",
+      "BasePath": "_content/Wow",
+      "RelativePath": "Media/seks.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\seks.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\Media\\SignInBackground.gif",
+      "SourceId": "Wow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\",
+      "BasePath": "_content/Wow",
+      "RelativePath": "Media/SignInBackground.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\SignInBackground.gif"
+    },
+    {
+      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\Media\\Wowch_logo.png",
+      "SourceId": "Wow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\",
+      "BasePath": "_content/Wow",
+      "RelativePath": "Media/Wowch_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\Wowch_logo.png"
     }
   ]
 }
