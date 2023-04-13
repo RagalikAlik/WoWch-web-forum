@@ -1,7 +1,9 @@
 ﻿@page "/signin"
 @using Npgsql;
 @using Microsoft.EntityFrameworkCore;
+
 @inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthentificationStateProvider
 
 <head>
     <link rel="stylesheet" href="css/Registration.css">
@@ -30,6 +32,10 @@
     private string? login;
     private string? password;
     private const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
+
+    //[CascadingParameter]
+    //private Task<AuthenticationState>? authenticationState{ get; set; }
+
 
     private void GetUserFromDb()
     {

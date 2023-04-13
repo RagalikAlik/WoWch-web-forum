@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 
+
 namespace Wow.Controllers
 {
     public class AccountController
@@ -21,5 +22,7 @@ namespace Wow.Controllers
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+
     }
 }
