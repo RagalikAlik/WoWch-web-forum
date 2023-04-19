@@ -8,13 +8,13 @@ public class ThemeController
 
     public static async Task WriteTheme()
     {
-        NpgsqlConnection conn = new NpgsqlConnection(link);
+        var conn = new NpgsqlConnection(link);
         conn.ConnectionString = link;
         conn.Open();
-        NpgsqlCommand cmd = new NpgsqlCommand();
+        var cmd = new NpgsqlCommand();
         cmd.CommandText = "INSERT INTO themes(HEADER, RELEASEDATE, CREATOR, TEXT, likes, dislikes) VALUES ('я люблю котлеты', '11/03/2023', 'xtc', 'я люблю котлеты, это моя любимая еда', 0, 0);";
         cmd.Connection = conn;
         cmd.ExecuteNonQuery();
-        conn.Close();
+        await conn.CloseAsync();
     }
 }

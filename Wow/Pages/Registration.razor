@@ -15,13 +15,13 @@
             <h2>Регистрация</h2>
             <form method="post" >
                 <div class="input-container">
-                    <input class="input-field" type="text" @bind="login" placeholder="Логин">
+                    <input class="input-field" type="text" @bind="login" placeholder="Логин" required>
                 </div>
                 <div class="input-container">
-                    <input class="input-field" type="email" @bind="email" placeholder="Электронная почта">
+                    <input class="input-field" type="email" @bind="email" placeholder="Электронная почта" required>
                 </div>
                 <div class="input-container">
-                    <input class="input-field" type="password" @bind="password" placeholder="Пароль">
+                    <input class="input-field" type="password" @bind="password" placeholder="Пароль" required>
                 </div>
                 <div>
                     <a class="reg-button" href="" @onclick="Reg">Зарегистрироваться</a>

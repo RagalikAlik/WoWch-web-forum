@@ -1,6 +1,7 @@
 ﻿@page "/signin"
 @using Npgsql;
 @using Microsoft.EntityFrameworkCore;
+@using Microsoft.EntityFrameworkCore.Metadata
 
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthentificationStateProvider
@@ -9,16 +10,15 @@
     <link rel="stylesheet" href="css/Registration.css">
 </head>
 <body>
-    @*style="width:100%; height: 100%;  background: url(..\\Media\\seks.jpg) no-repeat; background-size: 100%"*@
     <div>
         <div style="margin-left: 40%">
         <h2>Авторизация</h2>
             <form method="post">
                 <div class="input-container">
-                    <input class="input-field" type="text" @bind="login" placeholder="Логин">
+                    <input class="input-field" type="text" @bind="login" placeholder="Логин" required>
                 </div>
                 <div class="input-container">
-                    <input class="input-field" type="password" @bind="password" placeholder="Пароль">
+                    <input class="input-field" type="password" @bind="password" placeholder="Пароль" required>
                 </div>
                 <div class="input-button-container">
                     <input class="reg-button" type="submit" @onclick="GoReg" value="Войти" />
@@ -31,17 +31,15 @@
 @code{
     private string? login;
     private string? password;
-    private const string link1 = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
+    public static IConfiguration Configuration { get; }
 
-    //[CascadingParameter]
-    //private Task<AuthenticationState>? authenticationState{ get; set; }
-
+    private static readonly string? Link1 = Configuration.GetConnectionString("DefaultConnection");
 
     private void GetUserFromDb()
     {
         NpgsqlConnection conn = new NpgsqlConnection();
         NpgsqlCommand cmd = new NpgsqlCommand();
-        conn.ConnectionString = link1;
+        conn.ConnectionString = Link1;
         conn.Open();
         cmd.CommandText = $"";
         cmd.Connection = conn;
