@@ -32,6 +32,4 @@ public class Theme
         _likes = likes;
         _dislikes = dislikes;
     }
-    
-    
 }

@@ -1,54 +1,55 @@
 ﻿@page "/signin"
 @using Npgsql;
-@using Microsoft.EntityFrameworkCore;
-@using Microsoft.EntityFrameworkCore.Metadata
+@using System.Net
+@using System.Reflection.Metadata
+@using Wow.Controllers
 
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthentificationStateProvider
+@inject IJSRuntime Js
 
 <head>
     <link rel="stylesheet" href="css/Registration.css">
 </head>
 <body>
-    <div>
-        <div style="margin-left: 40%">
+<div>
+    <div style="margin-left: 40%">
         <h2>Авторизация</h2>
-            <form method="post">
-                <div class="input-container">
-                    <input class="input-field" type="text" @bind="login" placeholder="Логин" required>
-                </div>
-                <div class="input-container">
-                    <input class="input-field" type="password" @bind="password" placeholder="Пароль" required>
-                </div>
-                <div class="input-button-container">
-                    <input class="reg-button" type="submit" @onclick="GoReg" value="Войти" />
-                </div>
-            </form>
-         </div>
+        <form method="post">
+            <div class="input-container">
+                <input class="input-field" type="text" @bind="login" placeholder="Логин" required>
+            </div>
+            <div class="input-container">
+                <input class="input-field" type="password" @bind="password" placeholder="Пароль" required>
+            </div>
+            <div class="input-button-container">
+                <input class="reg-button" type="submit" @onclick="GetUserFromDb" value="Войти"/>
+            </div>
+        </form>
     </div>
+</div>
 </body>
 
 @code{
     private string? login;
     private string? password;
-    public static IConfiguration Configuration { get; }
-
-    private static readonly string? Link1 = Configuration.GetConnectionString("DefaultConnection");
+    static IConfigurationBuilder builder = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true);
+    static readonly IConfiguration Configuration = builder.Build();
+        
+    private static readonly string? Link =Configuration.GetConnectionString("DefaultConnection");
 
     private void GetUserFromDb()
     {
-        NpgsqlConnection conn = new NpgsqlConnection();
-        NpgsqlCommand cmd = new NpgsqlCommand();
-        conn.ConnectionString = Link1;
-        conn.Open();
-        cmd.CommandText = $"";
-        cmd.Connection = conn;
-        cmd.ExecuteNonQuery();
-        conn.Close();
+        var user = AccountController.Authorization(login, password);
+        GoReg();
     }
 
     private void GoReg()
     {
         Navigation.NavigateTo("/registration");
+        Js.InvokeVoidAsync("showUser");
+        Navigation.NavigateTo("/");
     }
 }

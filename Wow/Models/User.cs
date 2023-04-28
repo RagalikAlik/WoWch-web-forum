@@ -11,11 +11,6 @@ namespace Wow.Models
         public DateTime RegistrationDate { get; set; }
         public string Role { get; set; }
 
-        public void GetUserFromDb()
-        {
-
-        }
-
         public User(int id, string login, string password, string email, DateTime registrationDate)
         {
             Id = id;
@@ -23,6 +18,11 @@ namespace Wow.Models
             Password = password;
             Email = email;
             RegistrationDate = registrationDate;
+        }
+
+        public User()
+        {
+            
         }
 
         public void WriteUserToDb(string login, string password, string email, DateTime date)
@@ -34,10 +34,13 @@ namespace Wow.Models
 
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.CommandText = $"INSERT INTO users(LOGIN, PASSWORD, EMAIL, REGISTRATIONDATE) VALUES ({login}, {password}, {email}, {date});";
+            cmd.CommandText = $"INSERT INTO users(LOGIN, PASSWORD, EMAIL, REGISTRATIONDATE) " +
+                              $"VALUES ({login}, {password}, {email}, {date});";
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        
+        
     }
 }
