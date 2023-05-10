@@ -11,13 +11,14 @@ namespace Wow.Models
         public DateTime RegistrationDate { get; set; }
         public string Role { get; set; }
 
-        public User(int id, string login, string password, string email, DateTime registrationDate)
+        public User(int id, string login, string password, string email, DateTime registrationDate, string role)
         {
             Id = id;
             Login = login;
             Password = password;
             Email = email;
             RegistrationDate = registrationDate;
+            Role = role;
         }
 
         public User()

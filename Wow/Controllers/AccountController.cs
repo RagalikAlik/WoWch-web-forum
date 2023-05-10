@@ -1,6 +1,8 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Internal;
+using Wow.Controllers;
 using Wow.Models;
 
 
@@ -11,10 +13,11 @@ namespace Wow.Controllers
         static IConfigurationBuilder builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true);
+
         static readonly IConfiguration Configuration = builder.Build();
-        
-        private static readonly string? Link =Configuration.GetConnectionString("DefaultConnection");
-        
+
+        private static readonly string? Link = Configuration.GetConnectionString("DefaultConnection");
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public static void Register(string login, string password, string email)
@@ -33,45 +36,49 @@ namespace Wow.Controllers
         }
 
         [HttpGet]
-        public static User Authorization(string login, string password)
+        public static async Task<User> Authorization(string login, string password)
         {
             NpgsqlConnection conn = new NpgsqlConnection(Link);
-            try
-            {
-                conn.ConnectionString = Link;
-                conn.Open();
-                NpgsqlCommand cmd = new NpgsqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = $"SELECT id FROM users where login = '{login}'";
-                int id = Convert.ToInt32(cmd.ExecuteScalar());
-                cmd.CommandText = $"SELECT login FROM users where login = '{login}'";
-                string log = Convert.ToString(cmd.ExecuteScalar());
-                cmd.CommandText = $"SELECT password FROM users where login = '{login}'";
-                string pass = Convert.ToString(cmd.ExecuteScalar());
-                cmd.CommandText = $"SELECT email FROM users where login = '{login}'";
-                string mail = Convert.ToString(cmd.ExecuteScalar());
-                cmd.CommandText = $"SELECT registrationdate FROM users where login = '{login}'";
-                DateTime regDate = Convert.ToDateTime(cmd.ExecuteScalar());
 
-                if (password == pass)
+            conn.ConnectionString = Link;
+            conn.Open();
+            string commandText = $"SELECT * FROM users where login = '{login}'";
+            await using (NpgsqlCommand cmd = new NpgsqlCommand(commandText, conn))
+            {
+                cmd.Parameters.AddWithValue("login", login);
+                await using (NpgsqlDataReader reader = await cmd.ExecuteReaderAsync())
                 {
-                    User user = new User(id, log,pass,mail,regDate);
-                    conn.Close();
-                    return user;
-                }
-                else
-                {
-                    conn.Close();
-                    throw new Exception("Invalid password");
+                    while (await reader.ReadAsync())
+                    {
+                        User user = ReadUser(reader);
+                        return user;
+                    }
                 }
             }
-            catch (Exception e)
-            {
-                conn.Close();
-            }
 
-            return new User();
+            return null;
         }
-
+        
+        [HttpGet]
+        private static User ReadUser(NpgsqlDataReader reader)
+        {
+            int? id = reader["id"] as int?;
+            string? login = reader["login"] as string;
+            string? email = reader["email"] as string;
+            string? password = reader["password"] as string;
+            DateTime registrationDate = reader["registrationdate"] as DateTime? ?? default;
+            string? role = reader["role"] as string;
+            
+            User user = new User
+            {
+                Id = id.Value,
+                Login = login,
+                Password = password,
+                Email = email,
+                RegistrationDate = registrationDate,
+                Role = role
+            };
+            return user;
+        }
     }
 }
