@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pTiJqxOIZEAz+ChNPEl79Q5l5OR1S2hjo90qpn/R2Rc=",
+  "Hash": "LG0JihmfkQHYyeaViAMJ9K57F9+j9z7Du35u4Kk8Tys=",
   "Source": "Wow",
   "BasePath": "_content/Wow",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Media\\Wowch_logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\script.js",
+      "SourceId": "Wow",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\",
+      "BasePath": "_content/Wow",
+      "RelativePath": "script/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\script\\script.js"
     }
   ]
 }

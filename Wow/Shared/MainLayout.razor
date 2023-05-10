@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using Wow.Models
+@using Wow.Controllers
+@inherits LayoutComponentBase
 
 <PageTitle>Wow</PageTitle>
 
@@ -15,8 +17,16 @@
                         </a>
                     </div>
                     <div class="links">
-                        <a href="signin" id="signin">SignIn</a>
-            
+                        <a href="profile">
+                            @if (AccountController.user != null)
+                            {
+                                @AccountController.user.Login
+                                
+                            }
+
+                        </a>
+                        <a href="signin" id="signin" accesskey="signin">SignIn</a>
+
                         <a href="registration" id="signup">SignUp</a>
                     </div>
                 </div>
@@ -29,3 +39,9 @@
         </article>
     </main>
 </div>
+
+
+@code
+{
+    
+}

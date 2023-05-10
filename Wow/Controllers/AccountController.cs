@@ -10,6 +10,9 @@ namespace Wow.Controllers
 {
     public class AccountController
     {
+        public static User user;
+
+
         static IConfigurationBuilder builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true);

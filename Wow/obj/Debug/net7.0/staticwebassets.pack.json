@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\script.js",
+      "PackagePath": "staticwebassets\\script\\script.js"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Wow.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

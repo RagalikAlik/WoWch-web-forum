@@ -1,11 +1,8 @@
 ﻿@page "/signin"
-@using Npgsql;
-@using System.Net
-@using System.Reflection.Metadata
 @using Wow.Controllers
+@using Wow.Models
 
 @inject NavigationManager Navigation
-@inject AuthenticationStateProvider AuthentificationStateProvider
 @inject IJSRuntime Js
 
 <head>
@@ -40,16 +37,13 @@
         
     private static readonly string? Link =Configuration.GetConnectionString("DefaultConnection");
 
-    private void GetUserFromDb()
+    
+    async void GetUserFromDb()
     {
-        var user = AccountController.Authorization(login, password);
-        GoReg();
-    }
+        //await Js.InvokeVoidAsync("showUser");
+        Navigation.NavigateTo("/", true);
+        if (login != null && password != null) 
+            AccountController.user = await AccountController.Authorization(login , password);
 
-    private void GoReg()
-    {
-        Navigation.NavigateTo("/registration");
-        Js.InvokeVoidAsync("showUser");
-        Navigation.NavigateTo("/");
     }
 }
