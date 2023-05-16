@@ -53,3 +53,5 @@ C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\runtimes\win\lib\netcoreapp
 C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\Wow.csproj.CopyComplete
+C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\libman.json
+C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\Blazored.TextEditor.dll

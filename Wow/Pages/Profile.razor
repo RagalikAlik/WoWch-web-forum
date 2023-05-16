@@ -1,19 +1,21 @@
 ﻿@page "/profile"
 @using Wow.Controllers
 
-<PageTitle>Профиль</PageTitle>
+<PageTitle>Профиль @AccountController.user.Login | WoWch</PageTitle>
 
 <head>
     
 </head>
-<body>
-    <div>
-        <h1>
-            Привет,
-            
-                @AccountController.user.Login 
-            , соси нос ахрамович
-        </h1>
+<body class="body-profile">
+    <div class="profile-information-bar">
+        <h3>
+            Профиль @AccountController.user.Login
+        </h3>
+    </div>
+    <div class="profile-body">
+        <p style="font-size: 14pt">
+            Дата регистрации: @AccountController.user.RegistrationDate
+        </p>
     </div>
 </body>
 

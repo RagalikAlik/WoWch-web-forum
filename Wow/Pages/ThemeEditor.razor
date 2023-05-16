@@ -1,0 +1,77 @@
+﻿@page "/article_editor"
+
+@using Wow.Controllers
+@using Wow.Models
+@using Blazored.TextEditor
+
+<PageTitle>Редактор статьи</PageTitle>
+
+<div class="col-md-8">
+    <div class="card">
+        <div class="card-header">
+            Редактор статьи
+        </div>
+        <div class="card-body mb-5" style="height:500px;">
+            <BlazoredTextEditor @ref=QuillHtml Placeholder="write something...">
+                <ToolbarContent>
+                    <select class="ql-header">
+                        <option selected=""></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </select>
+                    <span class="ql-formats">
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-strike"></button>
+                    </span>
+                    <span class="ql-formats"> 
+                        <select class="ql-color"></select> 
+                        <select class="ql-background"></select> 
+                    </span> 
+                    <span class="ql-formats">
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button> 
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-link"></button> 
+                    </span> 
+                    <span class="ql-formats">
+                        <button class="ql-video"></button> 
+                        <button class="ql-image"></button>
+                    </span>
+
+                </ToolbarContent>
+            </BlazoredTextEditor>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-success" @onclick=@(async ()=> await ShowAoutputPreview() )>Готово</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            the preview of html editor
+        </div>
+        <div class="card-body">
+            @preview
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    private BlazoredTextEditor? QuillHtml;
+    private MarkupString preview;
+
+    private async Task ShowAoutputPreview()
+    {
+        if(!string.IsNullOrWhiteSpace(await QuillHtml.GetText()))
+        {
+            preview = (MarkupString)await QuillHtml.GetHTML();
+        }
+    }
+}

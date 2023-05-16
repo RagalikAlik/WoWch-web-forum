@@ -73,6 +73,894 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\lib\\quill\\CHANGELOG.md"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\quill"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\README.md",
+      "PackagePath": "staticwebassets\\lib\\quill\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\base.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\base.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\bubble.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\bubble.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\bubble\\toolbar.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\bubble\\toolbar.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\bubble\\tooltip.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\bubble\\tooltip.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\core.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\core.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\favicon.png",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\align-center.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\align-center.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\align-justify.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\align-justify.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\align-left.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\align-left.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\align-right.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\align-right.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\attachment.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\attachment.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\audio.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\audio.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\authorship.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\authorship.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\background.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\background.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\blockquote.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\blockquote.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\bold.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\bold.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\clean.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\clean.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\code.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\code.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\color.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\color.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\comment.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\comment.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\direction-ltr.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\direction-ltr.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\direction-rtl.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\direction-rtl.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\dropdown.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\dropdown.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\embed.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\embed.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\emoji.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\emoji.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\float-center.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\float-center.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\float-full.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\float-full.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\float-left.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\float-left.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\float-right.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\float-right.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\font.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\font.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\formula.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\formula.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\hashtag.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\hashtag.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\header-2.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\header-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\header-3.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\header-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\header-4.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\header-4.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\header-5.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\header-5.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\header-6.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\header-6.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\header.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\header.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\horizontal-rule.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\horizontal-rule.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\image.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\image.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\indent.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\indent.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\italic.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\italic.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\link.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\link.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\list-bullet.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\list-bullet.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\list-check.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\list-check.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\list-ordered.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\list-ordered.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\map.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\map.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\mention.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\mention.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\more.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\more.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\outdent.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\outdent.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\redo.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\redo.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\size-decrease.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\size-decrease.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\size-increase.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\size-increase.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\size.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\size.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\spacing.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\spacing.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\speech.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\speech.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\strike.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\strike.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\subscript.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\subscript.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\superscript.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\superscript.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-all.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-all.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-bottom.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-bottom.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-left.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-left.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-none.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-none.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-outside.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-outside.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-right.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-right.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-border-top.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-border-top.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-delete-cells.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-delete-cells.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-delete-columns.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-delete-columns.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-delete-rows.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-delete-rows.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-insert-cells.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-insert-cells.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-insert-columns.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-insert-columns.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-insert-rows.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-insert-rows.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-merge-cells.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-merge-cells.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table-unmerge-cells.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table-unmerge-cells.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\table.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\table.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\underline.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\underline.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\undo.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\undo.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\icons\\video.svg",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\icons\\video.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\snow.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\snow.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\snow\\toolbar.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\snow\\toolbar.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\assets\\snow\\tooltip.styl",
+      "PackagePath": "staticwebassets\\lib\\quill\\assets\\snow\\tooltip.styl"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\block.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\block.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\break.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\break.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\container.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\container.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\cursor.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\cursor.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\embed.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\embed.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\inline.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\inline.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\scroll.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\scroll.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\blots\\text.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\blots\\text.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\editor.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\editor.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\emitter.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\emitter.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\logger.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\logger.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\module.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\module.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\polyfill.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\polyfill.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\quill.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\quill.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\selection.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\selection.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\core\\theme.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\core\\theme.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.bubble.css",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.bubble.css"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.core.css",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.core.css"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.core.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.core.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.min.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.min.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\dist\\quill.snow.css",
+      "PackagePath": "staticwebassets\\lib\\quill\\dist\\quill.snow.css"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\align.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\align.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\background.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\background.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\blockquote.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\blockquote.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\bold.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\bold.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\code.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\code.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\color.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\color.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\direction.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\direction.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\font.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\font.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\header.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\header.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\image.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\image.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\indent.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\indent.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\italic.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\italic.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\link.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\link.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\list.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\list.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\script.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\size.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\size.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\strike.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\strike.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\underline.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\underline.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\formats\\video.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\formats\\video.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\modules\\clipboard.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\modules\\clipboard.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\modules\\formula.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\modules\\formula.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\modules\\history.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\modules\\history.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\modules\\keyboard.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\modules\\keyboard.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\modules\\syntax.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\modules\\syntax.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\modules\\toolbar.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\modules\\toolbar.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\package.json",
+      "PackagePath": "staticwebassets\\lib\\quill\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\quill.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\quill.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\themes\\base.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\themes\\base.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\themes\\bubble.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\themes\\bubble.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\themes\\snow.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\themes\\snow.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\ui\\color-picker.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\ui\\color-picker.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\ui\\icon-picker.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\ui\\icon-picker.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\ui\\icons.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\ui\\icons.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\ui\\picker.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\ui\\picker.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\lib\\quill\\ui\\tooltip.js",
+      "PackagePath": "staticwebassets\\lib\\quill\\ui\\tooltip.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\LICENSE.md",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\README.md",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\ckeditor.d.ts",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\ckeditor.d.ts"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\ckeditor.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\ckeditor.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\ckeditor.js.map",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\ckeditor.js.map"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\index.html",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\sample\\css\\sample.css",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\sample\\css\\sample.css"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\sample\\img\\bg.png",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\sample\\img\\bg.png"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\sample\\img\\github.svg",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\sample\\img\\github.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\sample\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\sample\\img\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\sample\\img\\umbrellas.jpg",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\sample\\img\\umbrellas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\af.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\af.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ar.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ar.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ast.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ast.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\az.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\az.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\bg.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\bg.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\bn.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\bn.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\bs.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\bs.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ca.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ca.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\cs.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\cs.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\da.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\da.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\de-ch.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\de-ch.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\de.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\de.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\el.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\el.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\en-au.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\en-au.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\en-gb.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\en-gb.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\eo.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\eo.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\es-co.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\es-co.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\es.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\es.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\et.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\et.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\eu.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\eu.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\fa.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\fa.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\fi.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\fi.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\fr.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\fr.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\gl.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\gl.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\gu.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\gu.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\he.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\he.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\hi.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\hi.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\hr.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\hr.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\hu.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\hu.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\id.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\id.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\it.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\it.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ja.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ja.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\jv.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\jv.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\km.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\km.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\kn.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\kn.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ko.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ko.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ku.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ku.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\lt.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\lt.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\lv.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\lv.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ms.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ms.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\nb.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\nb.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ne.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ne.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\nl.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\nl.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\no.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\no.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\oc.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\oc.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\pl.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\pl.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\pt-br.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\pt-br.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\pt.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\pt.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ro.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ro.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ru.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ru.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\si.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\si.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\sk.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\sk.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\sl.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\sl.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\sq.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\sq.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\sr-latn.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\sr-latn.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\sr.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\sr.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\sv.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\sv.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\th.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\th.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\tk.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\tk.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\tr.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\tr.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\tt.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\tt.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ug.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ug.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\uk.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\uk.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\ur.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\ur.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\uz.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\uz.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\vi.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\vi.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\zh-cn.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\zh-cn.js"
+    },
+    {
+      "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\ckeditor5\\translations\\zh.js",
+      "PackagePath": "staticwebassets\\script\\ckeditor5\\translations\\zh.js"
+    },
+    {
       "Id": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\script\\script.js",
       "PackagePath": "staticwebassets\\script\\script.js"
     },

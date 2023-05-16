@@ -2,10 +2,27 @@
 @using Wow.Controllers
 
 <PageTitle>WoWch</PageTitle>
+<head>
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body style="width: 100%; height: 100%">
+    <div style="display: flex; flex-direction:row;">
+        <div style="width:85%; height:100%;">
+            <h2 style="margin-left: 10%">Форум</h2>
+            <div>
+                <h3>Гайды</h3>
+                <ul>
+                    <li><a> </a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="width:15%; height:100%;">
+            <p>Статистика сайта</p>
+            <div style="border: solid orange 2px">
+                <p>кол-во пользователей: @String.Join(" ",MainController.GetAmountOfUsers())</p>
+            </div>
+        </div>
+    </div>
+    
 
-<h1>Hello, dolboeb!</h1>
-
-
-Welcome to your govno app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+</body>
