@@ -4,6 +4,7 @@ using Npgsql;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Internal;
 using Wow.Controllers;
 using Wow.Models;
+using System.IO;
 
 
 namespace Wow.Controllers
@@ -82,6 +83,16 @@ namespace Wow.Controllers
                 Role = role
             };
             return user;
+        }
+
+        private static void AddFile(IFormFile uploads)
+        {
+            byte[] imageData = null;
+            using (var binaryReader = new BinaryReader(user.Avatar.OpenReadStream()))
+            {
+                imageData = binaryReader.ReadBytes((int)user.Avatar.Length);
+            }
+            
         }
     }
 }

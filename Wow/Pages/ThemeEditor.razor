@@ -71,7 +71,8 @@
     {
         if(!string.IsNullOrWhiteSpace(await QuillHtml.GetText()))
         {
-            preview = (MarkupString)await QuillHtml.GetHTML();
+            var a = await QuillHtml.GetHTML();
+            //preview = (MarkupString)await QuillHtml.GetHTML();
         }
     }
 }

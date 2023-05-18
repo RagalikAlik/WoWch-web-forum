@@ -29,5 +29,29 @@ namespace Wow.Controllers
             }
         }
 
+        [HttpPost]
+        public static string GetAmountOfArticles()
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+            {
+                conn.ConnectionString = Link;
+
+                conn.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand();
+
+                cmd.CommandText = $"SELECT count(*) FROM themes";
+                cmd.Connection = conn;
+                return cmd.ExecuteScalar().ToString();
+            }
+        }
+
+        //public static byte[] ConvertPicToBytea()
+        //{
+        //    byte? bytePic=null;
+
+
+
+        //    return bytePic;
+        //}
     }
 }

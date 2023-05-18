@@ -8,6 +8,15 @@
 </head>
 <body class="body-profile">
     <div class="profile-information-bar">
+        <div>
+            <img src="@imgUrl" style="height: 300px; width:300px;" />
+        </div>
+        <p>Изменить аватар</p>
+        <form>
+            <InputFile OnChange="@OnFileSelection" accept=".jpg, .png" />
+            
+        </form>
+        
         <h3>
             Профиль @AccountController.user.Login
         </h3>
@@ -17,9 +26,28 @@
             Дата регистрации: @AccountController.user.RegistrationDate
         </p>
     </div>
+
+@*    <div>
+        <InputFile OnChange="@OnFileSelection"></InputFile>
+        <div class="row">
+            <img src="@imgUrl">
+        </div>
+    </div>*@
 </body>
 
 
 @code {
 
+    string imgUrl = string.Empty;
+    private async Task OnFileSelection(InputFileChangeEventArgs e)
+    {
+        IBrowserFile file = e.File;
+        var imgFile = await file.RequestImageFileAsync(file.ContentType, 226, 223);
+
+        var buffers = new byte[imgFile.Size];
+        await imgFile.OpenReadStream().ReadAsync(buffers);
+        string imageType = imgFile.ContentType;
+        imgUrl = $"data:{imageType};base64,{Convert.ToBase64String(buffers)}";
+
+    }
 }
