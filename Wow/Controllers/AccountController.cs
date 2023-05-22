@@ -85,14 +85,19 @@ namespace Wow.Controllers
             return user;
         }
 
-        private static void AddFile(IFormFile uploads)
+        public static void UpdateUserAvatar(string login, byte[] byteImage)
         {
-            byte[] imageData = null;
-            using (var binaryReader = new BinaryReader(user.Avatar.OpenReadStream()))
+            var image = System.Text.Encoding.Default.GetString(byteImage);
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(Link))
             {
-                imageData = binaryReader.ReadBytes((int)user.Avatar.Length);
+                conn.ConnectionString = Link;
+                conn.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.CommandText = $"UPDATE users SET avatar = {image} WHERE login = {login}";
+                cmd.Connection = conn;
+                cmd.ExecuteScalar();
             }
-            
         }
     }
 }

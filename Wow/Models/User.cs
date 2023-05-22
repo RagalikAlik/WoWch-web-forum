@@ -10,7 +10,7 @@ namespace Wow.Models
         public string Email { get; set; }
         public DateTime RegistrationDate { get; set; }
         public string Role { get; set; }
-        public IFormFile Avatar { get; set; }
+        public byte[] ProfilePicture { get; set; }
 
         public User(int id, string login, string password, string email, DateTime registrationDate, string role)
         {

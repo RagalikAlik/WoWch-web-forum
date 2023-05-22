@@ -1,5 +1,6 @@
 ﻿@page "/profile"
 @using Wow.Controllers
+@using Wow.Models;
 
 <PageTitle>Профиль @AccountController.user.Login | WoWch</PageTitle>
 
@@ -9,7 +10,7 @@
 <body class="body-profile">
     <div class="profile-information-bar">
         <div>
-            <img src="@imgUrl" style="height: 300px; width:300px;" />
+            <img src="@picture" style="height: 300px; width:300px;" />
         </div>
         <p>Изменить аватар</p>
         <form>
@@ -26,19 +27,14 @@
             Дата регистрации: @AccountController.user.RegistrationDate
         </p>
     </div>
-
-@*    <div>
-        <InputFile OnChange="@OnFileSelection"></InputFile>
-        <div class="row">
-            <img src="@imgUrl">
-        </div>
-    </div>*@
 </body>
 
 
 @code {
+    private IBrowserFile file;
+    private Avatar photo = new Avatar();
+    private string picture = string.Empty;
 
-    string imgUrl = string.Empty;
     private async Task OnFileSelection(InputFileChangeEventArgs e)
     {
         IBrowserFile file = e.File;
@@ -47,7 +43,37 @@
         var buffers = new byte[imgFile.Size];
         await imgFile.OpenReadStream().ReadAsync(buffers);
         string imageType = imgFile.ContentType;
-        imgUrl = $"data:{imageType};base64,{Convert.ToBase64String(buffers)}";
+        picture = $"data:{imageType};base64,{Convert.ToBase64String(buffers)}";
 
+        photo.Id = AccountController.user.Id;
+        photo.FileName = imgFile.Name;
+        photo.ImageData = await ReadFileData(imgFile);
+        photo.SavePhoto();
+        StateHasChanged();
+    }
+
+    //public async Task HandleFileUpload(InputFileChangeEventArgs e)
+    //{
+    //    file = e.File;
+    //    var imgFile = await file.RequestImageFileAsync(file.ContentType, 226, 223);
+
+    //    photo.Id = AccountController.user.Id;
+    //    photo.FileName = imgFile.Name;
+    //    photo.ImageData =await ReadFileData(imgFile);
+        
+    //    photo.SavePhoto();
+    //    picture = $"data:{imgFile.ContentType};base64,{Convert.ToBase64String(photo.ImageData)}";
+    //    //StateHasChanged();
+    //}
+
+    private async Task<byte[]> ReadFileData(IBrowserFile file)
+    {
+        using (var stream = file.OpenReadStream())
+        using (var memoryStream = new MemoryStream())
+        {
+            await stream.CopyToAsync(memoryStream);
+            return memoryStream.ToArray();
+        }
     }
 }
+    

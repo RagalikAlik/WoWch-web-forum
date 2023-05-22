@@ -44,14 +44,5 @@ namespace Wow.Controllers
                 return cmd.ExecuteScalar().ToString();
             }
         }
-
-        //public static byte[] ConvertPicToBytea()
-        //{
-        //    byte? bytePic=null;
-
-
-
-        //    return bytePic;
-        //}
     }
 }
