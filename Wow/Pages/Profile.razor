@@ -33,7 +33,22 @@
 @code {
     private IBrowserFile file;
     private Avatar photo = new Avatar();
-    private string picture = $"data: .jpg;base64,{Convert.ToBase64String(AccountController.GetAvatarFromDb())}";
+    string picture = SetPicture();
+
+    private static string SetPicture()
+    {
+        string pic = string.Empty;
+        if (Avatar.IfImageExists())
+        {
+            pic = $"data: .jpg;base64,{Convert.ToBase64String(AccountController.GetAvatarFromDb())}";
+        }
+        else
+        {
+            pic = string.Empty;
+        }
+        return pic;
+    }
+    
 
     private async Task OnFileSelection(InputFileChangeEventArgs e)
     {
