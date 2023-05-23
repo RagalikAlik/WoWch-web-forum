@@ -6,30 +6,33 @@ public class Theme
 {
     private int _id;
     private string _creator;
-    private string _text;
+    private string? _text;
     private DateTime _releaseDate;
     private int _likes;
     private int _dislikes;
-    private UuidHandler? _image;
+    
 
-    public Theme(int id, string creator, string text, DateTime releaseDate, int likes, int dislikes, UuidHandler image)
+    public int Id { get { return this._id; } set { this._id = value; } }
+    public string Creator { get { return this._creator; } set { this._creator = value; } }
+    public string? Text { get { return this._text; } set { this._text = value; } }
+    public DateTime ReleaseDate { get { return this._releaseDate; } set { this._releaseDate = value; } }
+    public int Likes { get { return this._likes; } set { this._likes = value; } }
+    public int Dislikes{ get { return this._dislikes; } set { this._dislikes = value; } }
+
+    public Theme(string creator, string text, DateTime releaseDate)
     {
-        _id = id;
-        _creator = creator;
-        _text = text;
-        _releaseDate = releaseDate;
-        _likes = likes;
-        _dislikes = dislikes;
-        _image = image;
+        Creator = creator;
+        Text = text;
+        ReleaseDate = releaseDate;
     }
     
     public Theme(int id, string creator, string text, DateTime releaseDate, int likes, int dislikes)
     {
-        _id = id;
-        _creator = creator;
-        _text = text;
-        _releaseDate = releaseDate;
-        _likes = likes;
-        _dislikes = dislikes;
+        Id = id;
+        Creator = creator;
+        Text = text;
+        ReleaseDate = releaseDate;
+        Likes = likes;
+        Dislikes = dislikes;
     }
 }

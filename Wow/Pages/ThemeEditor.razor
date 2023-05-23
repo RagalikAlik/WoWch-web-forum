@@ -48,7 +48,7 @@
             </BlazoredTextEditor>
         </div>
         <div class="card-footer">
-            <button class="btn btn-success" @onclick=@(async ()=> await ShowAoutputPreview() )>Готово</button>
+            <button class="btn btn-success" @onclick=@(async ()=> await SaveTheme() )>Готово</button>
         </div>
     </div>
     <div class="card">
@@ -67,12 +67,14 @@
     private BlazoredTextEditor? QuillHtml;
     private MarkupString preview;
 
-    private async Task ShowAoutputPreview()
+
+    private async Task SaveTheme()
     {
         if(!string.IsNullOrWhiteSpace(await QuillHtml.GetText()))
         {
             var a = await QuillHtml.GetHTML();
-            //preview = (MarkupString)await QuillHtml.GetHTML();
+            Theme theme = new Theme(AccountController.user.Login, a, DateTime.Now);
+            ThemeController.WriteTheme(theme);
         }
     }
 }

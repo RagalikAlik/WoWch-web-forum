@@ -99,5 +99,26 @@ namespace Wow.Controllers
                 cmd.ExecuteScalar();
             }
         }
+
+        public static byte[] GetAvatarFromDb()
+        {
+            byte[] image = null;
+
+            using(NpgsqlConnection connection= new NpgsqlConnection(Link))
+            {
+                connection.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = $"select imagedata from avatars where id = {user.Id}";
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    image = (byte[])dr[0];
+                }
+
+            }
+
+            return image;
+        }
     }
 }

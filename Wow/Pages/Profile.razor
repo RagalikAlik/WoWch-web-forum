@@ -33,7 +33,7 @@
 @code {
     private IBrowserFile file;
     private Avatar photo = new Avatar();
-    private string picture = string.Empty;
+    private string picture = $"data: .jpg;base64,{Convert.ToBase64String(AccountController.GetAvatarFromDb())}";
 
     private async Task OnFileSelection(InputFileChangeEventArgs e)
     {
@@ -51,20 +51,6 @@
         photo.SavePhoto();
         StateHasChanged();
     }
-
-    //public async Task HandleFileUpload(InputFileChangeEventArgs e)
-    //{
-    //    file = e.File;
-    //    var imgFile = await file.RequestImageFileAsync(file.ContentType, 226, 223);
-
-    //    photo.Id = AccountController.user.Id;
-    //    photo.FileName = imgFile.Name;
-    //    photo.ImageData =await ReadFileData(imgFile);
-        
-    //    photo.SavePhoto();
-    //    picture = $"data:{imgFile.ContentType};base64,{Convert.ToBase64String(photo.ImageData)}";
-    //    //StateHasChanged();
-    //}
 
     private async Task<byte[]> ReadFileData(IBrowserFile file)
     {
