@@ -163,3 +163,41 @@ a, .btn-link {
     float:right;
     margin-right:1%;
 }
+
+.input-header-text{
+    width:450px;
+    height: 40px;
+    margin-left: 23%;
+}
+
+.theme-select-cathegory{
+    height:40px;
+
+}
+
+
+.article-header{
+    border-bottom: solid black 2px;
+    display:flex;
+    flex-direction: row;
+}
+
+.article-header-text{
+    font-size: 18pt;
+    margin-left: 20%;
+}
+
+.article-text{
+
+}
+
+.article{
+    width: 80%;
+    border: black solid 2px;
+}
+
+.article-footer{
+    display: flex;
+    flex-direction: row;
+    border-top: solid black 2px;
+}

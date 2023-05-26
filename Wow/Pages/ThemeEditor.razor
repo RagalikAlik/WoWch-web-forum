@@ -11,62 +11,97 @@
         <div class="card-header">
             Редактор статьи
         </div>
-        <div class="card-body mb-5" style="height:500px;">
-            <BlazoredTextEditor @ref=QuillHtml Placeholder="write something...">
-                <ToolbarContent>
-                    <select class="ql-header">
-                        <option selected=""></option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
-                        <option value="4"></option>
-                        <option value="5"></option>
-                    </select>
-                    <span class="ql-formats">
-                        <button class="ql-bold"></button>
-                        <button class="ql-italic"></button>
-                        <button class="ql-underline"></button>
-                        <button class="ql-strike"></button>
-                    </span>
-                    <span class="ql-formats"> 
-                        <select class="ql-color"></select> 
-                        <select class="ql-background"></select> 
-                    </span> 
-                    <span class="ql-formats">
-                        <button class="ql-list" value="ordered"></button>
-                        <button class="ql-list" value="bullet"></button> 
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-link"></button> 
-                    </span> 
-                    <span class="ql-formats">
-                        <button class="ql-video"></button> 
-                        <button class="ql-image"></button>
-                    </span>
+        <form>
+            <div>
+                <input class="input-header-text" type="text" name="input-header" placeholder="Заголовок" required/>
+                <select class="theme-select-cathegory" @bind="selectedValue" required>
+                    <option value="">Категории</option>
+                    <option value="Без категории">Без категории</option>
+                    <option value="Новости">Новости</option>
+                    <option value="Аддоны">Аддоны</option>
+                    <option value="Игровые вопросы">Игровые вопросы</option>
+                </select>
+            </div>
+            <div class="card-body mb-5" style="height:500px;">
+                <BlazoredTextEditor @ref=QuillHtml Placeholder="Текст статьи...">
+                    <ToolbarContent>
+                        <select class="ql-header">
+                            <option selected=""></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                        </select>
+                        <span class="ql-formats">
+                            <button class="ql-bold"></button>
+                            <button class="ql-italic"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-strike"></button>
+                        </span>
+                        <span class="ql-formats"> 
+                            <select class="ql-color"></select> 
+                            <select class="ql-background"></select> 
+                        </span> 
+                        <span class="ql-formats">
+                            <button class="ql-list" value="ordered"></button>
+                            <button class="ql-list" value="bullet"></button> 
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-link"></button> 
+                        </span> 
+                        <span class="ql-formats">
+                            <button class="ql-video"></button> 
+                        </span>
 
-                </ToolbarContent>
-            </BlazoredTextEditor>
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-success" @onclick=@(async ()=> await SaveTheme() )>Готово</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            the preview of html editor
-        </div>
-        <div class="card-body">
-            @preview
-        </div>
+                    </ToolbarContent>
+                </BlazoredTextEditor>
+                <InputFile multiple="multiple" OnChange="HandleFileSelection" />
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success" @onclick=@(async ()=> await SaveTheme() )>Готово</button>
+            </div>
+        </form>
     </div>
 </div>
 
 
 
 @code {
+    private string selectedValue;
+
+
     private BlazoredTextEditor? QuillHtml;
     private MarkupString preview;
 
+    private List<IBrowserFile> selectedFiles = new List<IBrowserFile>();
+
+    private void HandleFileSelection(InputFileChangeEventArgs e)
+    {
+        selectedFiles.AddRange(e.GetMultipleFiles());
+    }
+
+    private async Task UploadFiles()
+    {
+
+        foreach (var file in selectedFiles)
+        {
+            Photo photo = new Photo();
+
+            //var imgFile = await file.RequestImageFileAsync(file.ContentType, 226, 223);
+
+            //var buffers = new byte[imgFile.Size];
+            //await imgFile.OpenReadStream().ReadAsync(buffers);
+            //string imageType = imgFile.ContentType;
+
+            ////photo.Id = AccountController.user.Id;
+            //photo.ThemeId = imgFile.Name;
+            //photo.ImageData = await ReadFileData(imgFile);
+            //photo.SavePhoto();
+            //StateHasChanged();
+        }
+    }
 
     private async Task SaveTheme()
     {
@@ -74,7 +109,8 @@
         {
             var a = await QuillHtml.GetHTML();
             Theme theme = new Theme(AccountController.user.Login, a, DateTime.Now);
-            ThemeController.WriteTheme(theme);
+            await ThemeController.WriteTheme(theme);
+            await UploadFiles();
         }
     }
 }

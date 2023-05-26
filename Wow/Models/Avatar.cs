@@ -46,20 +46,6 @@ namespace Wow.Models
                     }
 
 
-                    //command.CommandText = @$"
-                    //        DO $$
-                    //            DECLARE
-                    //                v_id INT := @Id;
-                    //                v_data bytea := @data;
-                    //            BEGIN
-                    //                IF EXISTS(SELECT * FROM avatars WHERE id = v_id)
-                    //                THEN 
-                    //                    UPDATE avatars SET imagedata = v_data WHERE id = v_id;
-                    //                ELSE
-                    //                    insert into avatars (id, filename, imagedata) VALUES (v_id, @filename, v_data);
-                    //                END IF;
-                    //        END$$;
-                    //        ";
                     command.Parameters.AddWithValue("@Id", Id);
                     command.Parameters.AddWithValue("@filename", FileName);
                     command.Parameters.AddWithValue("@data", NpgsqlTypes.NpgsqlDbType.Bytea, ImageData.Length).Value = ImageData;
