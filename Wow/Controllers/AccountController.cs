@@ -72,7 +72,9 @@ namespace Wow.Controllers
             string? password = reader["password"] as string;
             DateTime registrationDate = reader["registrationdate"] as DateTime? ?? default;
             string? role = reader["role"] as string;
-            
+            string status = reader["status"] as string;
+
+
             User user = new User
             {
                 Id = id.Value,
@@ -80,7 +82,8 @@ namespace Wow.Controllers
                 Password = password,
                 Email = email,
                 RegistrationDate = registrationDate,
-                Role = role
+                Role = role,
+                Status = status
             };
             return user;
         }

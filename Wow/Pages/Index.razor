@@ -29,11 +29,11 @@
                     </div>
                     <div class="article-footer">
                         <div class="article-rating">
-                            <input type="button" value="Понравилось" />
+                            <input type="button" @onclick="() => HandleButtonLikeClick(item)" value="Понравилось" />
                             <p>@item.Likes</p>
                         </div>
                         <div class="article-rating">
-                            <input type="button" value="Не понравилось" />
+                            <input type="button" @onclick="() => HandleButtonDislikeClick(item)" value="Не понравилось" />
                             <p>@item.Dislikes</p>
                         </div>                       
                     </div>
@@ -69,6 +69,16 @@
 
 @code{
     List<Theme> themes = ThemeController.GetThemes();
+
+    private void HandleButtonLikeClick(Theme theme)
+    {
+        theme.AddLike();
+    }
+
+    private void HandleButtonDislikeClick(Theme theme)
+    {
+        theme.AddDislike();
+    }
 
     int a = 1;
 }

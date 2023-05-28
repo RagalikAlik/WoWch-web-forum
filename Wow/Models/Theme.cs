@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using Npgsql;
 using Npgsql.Internal.TypeHandlers;
 
 namespace Wow.Models;
@@ -25,7 +26,16 @@ public class Theme
     public int Likes { get { return this._likes; } set { this._likes = value; } }
     public int Dislikes{ get { return this._dislikes; } set { this._dislikes = value; } }
     public List<Comment>? Comments { get { return _comments; } set { _comments = value; } }
-    
+
+
+    static IConfigurationBuilder builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true);
+
+    static readonly IConfiguration Configuration = builder.Build();
+
+    private static readonly string? Link = Configuration.GetConnectionString("DefaultConnection");
+
 
     public Theme() { }
     public Theme(string creator, string text, string cathegory, string header, DateTime releaseDate)
@@ -49,5 +59,31 @@ public class Theme
         Likes = likes;
         Dislikes = dislikes;
         //Comments = comments;
+    }
+
+    public void AddLike()
+    {
+        using(NpgsqlConnection conn = new NpgsqlConnection(Link))
+        {
+            conn.Open();
+            var cmd = new NpgsqlCommand();
+            cmd.CommandText = $"update themes set likes = likes + 1 where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void AddDislike()
+    {
+        using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+        {
+            conn.Open();
+            var cmd = new NpgsqlCommand();
+            cmd.CommandText = $"update themes set dislikes = dislikes + 1 where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+        }
     }
 }

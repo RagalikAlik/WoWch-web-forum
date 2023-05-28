@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Npgsql;
 
 namespace Wow.Models
 {
@@ -13,7 +14,7 @@ namespace Wow.Models
         public string Status { get; set; }
         public byte[] ProfilePicture { get; set; }
 
-        public User(int id, string login, string password, string email, DateTime registrationDate, string role)
+        public User(int id, string login, string password, string email, DateTime registrationDate, string role, string status)
         {
             Id = id;
             Login = login;
@@ -21,6 +22,7 @@ namespace Wow.Models
             Email = email;
             RegistrationDate = registrationDate;
             Role = role;
+            Status = status;
         }
 
         public User()
