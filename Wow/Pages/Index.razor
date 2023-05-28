@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using Wow.Controllers
+@using Wow.Models
+@using Microsoft.AspNetCore.Components
 
 <PageTitle>WoWch</PageTitle>
 <head>
@@ -15,33 +17,42 @@
                     <li><a> </a></li>
                 </ul>
             </div>
-
-            <div class="article">
-                <div class="article-header">
-                    <a>юзер</a>
-                    <p class="article-header-text">Факин щит</p>
-                </div>
-                <div class="article-text">
-                    <h1><strong>Рубец</strong> Алексей <em>любит <u>котлеты</u></em></h1>
-                </div>
-                <div class="article-footer">
-                    <input type="button" value="Понравилось"/>
-                    <input type="button" value="Не понравилось"/>
-                </div>
-                <div class="article-comments">
-                    <div class="comment">
-                        <div class="comment-header">
-                            <span class="comment-author">Author</span>/
-                            @*<span class="comment-author">@comment.Author</span>*@
-                            @*<span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>*@
+            @foreach(var item in themes)
+            {
+                <div class="article">
+                    <div class="article-header">
+                        <a>@item.Creator</a>
+                        <p class="article-header-text">@item.Header</p>
+                    </div>
+                    <div class="article-text">
+                        @item.Text
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <input type="button" value="Понравилось" />
+                            <p>@item.Likes</p>
                         </div>
-                        <div class="comment-body">
-                            <p>Textffefeefefefefefffffffffffffffffffffffffffffffffffffffffffff</p>
-                            @*<p>@comment.Text</p>*@
+                        <div class="article-rating">
+                            <input type="button" value="Не понравилось" />
+                            <p>@item.Dislikes</p>
+                        </div>                       
+                    </div>
+                    <div class="article-comments">
+                        <div class="comment">
+                            <div class="comment-header">
+                                <span class="comment-author">Author</span>
+                                @*<span class="comment-author">@comment.Author</span>*@
+                                @*<span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>*@
+                            </div>
+                            <div class="comment-body">
+                                <p>Textffefeefefefefefffffffffffffffffffffffffffffffffffffffffffff</p>
+                                @*<p>@comment.Text</p>*@
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+
         </div>
         <div style="width:15%; height:100%;">
             <p>Статистика сайта</p>
@@ -55,3 +66,9 @@
     
 
 </body>
+
+@code{
+    List<Theme> themes = ThemeController.GetThemes();
+
+    int a = 1;
+}

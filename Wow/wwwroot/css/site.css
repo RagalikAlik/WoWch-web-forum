@@ -226,3 +226,21 @@ a, .btn-link {
 .comment-body {
     line-height: 1.4;
 }
+
+.article-rating{
+    display: flex;
+    flex-direction: row;
+    margin-left:5%;
+}
+
+.article-rating > p{
+    font-size: 14pt;
+    margin-left: 5px;
+    margin-top: 7px;
+    height: 30px;
+}
+
+.article-rating input{
+    height: 30px;
+    margin-top: 5px;
+}
