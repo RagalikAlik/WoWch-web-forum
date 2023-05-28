@@ -201,3 +201,28 @@ a, .btn-link {
     flex-direction: row;
     border-top: solid black 2px;
 }
+
+.comment {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-timestamp {
+    color: #888;
+    font-size: 0.8em;
+}
+
+.comment-body {
+    line-height: 1.4;
+}

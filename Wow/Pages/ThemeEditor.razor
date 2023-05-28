@@ -13,7 +13,7 @@
         </div>
         <form>
             <div>
-                <input class="input-header-text" type="text" name="input-header" placeholder="Заголовок" required/>
+                <input class="input-header-text" type="text" name="input-header" placeholder="Заголовок" @bind="@HeaderValue" required/>
                 <select class="theme-select-cathegory" @bind="selectedValue" required>
                     <option value="">Категории</option>
                     <option value="Без категории">Без категории</option>
@@ -70,12 +70,18 @@
 
 @code {
     private string selectedValue;
+    private string HeaderValue { get; set; }
 
 
     private BlazoredTextEditor? QuillHtml;
     private MarkupString preview;
 
     private List<IBrowserFile> selectedFiles = new List<IBrowserFile>();
+
+    private void HandleInputChange(ChangeEventArgs e)
+    {
+        HeaderValue = e.Value.ToString();
+    }
 
     private void HandleFileSelection(InputFileChangeEventArgs e)
     {
@@ -107,10 +113,11 @@
     {
         if(!string.IsNullOrWhiteSpace(await QuillHtml.GetText()))
         {
+            
             var a = await QuillHtml.GetHTML();
-            Theme theme = new Theme(AccountController.user.Login, a, DateTime.Now);
+            Theme theme = new Theme(AccountController.user.Login, a, selectedValue, HeaderValue, DateTime.Now);
             await ThemeController.WriteTheme(theme);
-            await UploadFiles();
+            //await UploadFiles();
         }
     }
 }
