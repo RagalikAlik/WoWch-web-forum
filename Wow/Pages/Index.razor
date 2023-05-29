@@ -72,13 +72,14 @@
 
     private void HandleButtonLikeClick(Theme theme)
     {
-        theme.AddLike();
+        if(AccountController.user!=null)
+            theme.AddLike();
     }
 
     private void HandleButtonDislikeClick(Theme theme)
     {
-        theme.AddDislike();
+        if (AccountController.user != null)
+            theme.AddDislike();
     }
 
-    int a = 1;
 }

@@ -67,4 +67,66 @@ public class ThemeController
         byte[] commentBytes = Encoding.UTF8.GetBytes(json);
         return commentBytes;
     }
+
+    public static Theme GetThemeWithMaxLikes()
+    {
+        var conn = new NpgsqlConnection(link);
+        conn.ConnectionString = link;
+        conn.Open();
+        var cmd = new NpgsqlCommand();
+        cmd.CommandText = "SELECT * FROM themes WHERE likes = (SELECT MAX(likes) FROM themes)";
+        cmd.Connection = conn;
+        using (var reader = cmd.ExecuteReader())
+        {
+            if (reader.Read())
+            {
+                Theme theme = new Theme
+                {
+                    Id = reader.GetInt32(0),
+                    Creator = reader.GetString(2),
+                    Text = new MarkupString(reader.GetString(3)),
+                    Header = reader.GetString(1),
+                    Cathegory = reader.GetString(7),
+                    ReleaseDate = reader.GetDateTime(4),
+                    Likes = reader.GetInt32(5),
+                    Dislikes = reader.GetInt32(6),
+                    //Comments = reader.Get
+                };
+                return theme;
+            }
+        }
+        return new Theme();
+    }
+
+
+    public static Theme GetThemeWithMaxDislikes()
+    {
+        var conn = new NpgsqlConnection(link);
+        conn.ConnectionString = link;
+        conn.Open();
+        var cmd = new NpgsqlCommand();
+        cmd.CommandText = "SELECT * FROM themes WHERE dislikes = (SELECT MAX(dislikes) FROM themes)";
+        cmd.Connection = conn;
+        using (var reader = cmd.ExecuteReader())
+        {
+            if (reader.Read())
+            {
+                Theme theme = new Theme
+                {
+                    Id = reader.GetInt32(0),
+                    Creator = reader.GetString(2),
+                    Text = new MarkupString(reader.GetString(3)),
+                    Header = reader.GetString(1),
+                    Cathegory = reader.GetString(7),
+                    ReleaseDate = reader.GetDateTime(4),
+                    Likes = reader.GetInt32(5),
+                    Dislikes = reader.GetInt32(6),
+                    //Comments = reader.Get
+                };
+                return theme;
+            }
+        }
+        return new Theme();
+    }
+
 }
