@@ -3,6 +3,7 @@ using Wow.Models;
 using System.Text.Json;
 using System.Text;
 using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
 
 namespace Wow.Controllers;
 
@@ -31,42 +32,54 @@ public class ThemeController
     public static List<Theme> GetThemes()
     {
         List<Theme> themes = new List<Theme>();
-
-        var conn = new NpgsqlConnection(link);
-        conn.ConnectionString = link;
-        conn.Open();
-        var cmd = new NpgsqlCommand();
-        cmd.CommandText = "SELECT * FROM themes;";
-        cmd.Connection = conn;
-        using(var reader = cmd.ExecuteReader())
+        try
         {
-            while (reader.Read())
+            var conn = new NpgsqlConnection(link);
+            conn.ConnectionString = link;
+            conn.Open();
+            var cmd = new NpgsqlCommand();
+            cmd.CommandText = "SELECT * FROM themes;";
+            cmd.Connection = conn;
+            using (var reader = cmd.ExecuteReader())
             {
-                Theme theme = new Theme
+                while (reader.Read())
                 {
-                    Id = reader.GetInt32(0),
-                    Creator = reader.GetString(2),
-                    Text = new MarkupString(reader.GetString(3)),
-                    Header = reader.GetString(1),
-                    Cathegory = reader.GetString(7),
-                    ReleaseDate = reader.GetDateTime(4),
-                    Likes = reader.GetInt32(5),
-                    Dislikes = reader.GetInt32(6),
-                    //Comments = reader.Get
-                };
-                themes.Add(theme);
+                    Theme theme = new Theme
+                    {
+                        Id = reader.GetInt32(0),
+                        Creator = reader.GetString(2),
+                        Text = new MarkupString(reader.GetString(3)),
+                        Header = reader.GetString(1),
+                        Cathegory = reader.GetString(7),
+                        ReleaseDate = reader.GetDateTime(4),
+                        Likes = reader.GetInt32(5),
+                        Dislikes = reader.GetInt32(6),
+                        Comments = reader.IsDBNull(8) ? null : JsonStringToComments(reader.GetString(8))
+                    };
+                    themes.Add(theme);
+                }
+                return themes;
             }
-            return themes;
+        } catch (InvalidCastException e)
+        {
+
         }
         return themes;
     }
 
-    private byte[] CommentsToByte(List<Comment> comments)
+    public static string CommentsToJsonString(List<Comment> comments)
     {
-        string json = JsonSerializer.Serialize(comments);
-        byte[] commentBytes = Encoding.UTF8.GetBytes(json);
-        return commentBytes;
+        string json = JsonConvert.SerializeObject(comments);
+        return json;
     }
+
+    public static List<Comment> JsonStringToComments(string json)
+    {
+        List<Comment> comments = JsonConvert.DeserializeObject<List<Comment>>(json);
+        return comments;
+    }
+
+    
 
     public static Theme GetThemeWithMaxLikes()
     {
@@ -90,7 +103,7 @@ public class ThemeController
                     ReleaseDate = reader.GetDateTime(4),
                     Likes = reader.GetInt32(5),
                     Dislikes = reader.GetInt32(6),
-                    //Comments = reader.Get
+                    Comments = JsonStringToComments(reader.GetString(8))
                 };
                 return theme;
             }
@@ -121,7 +134,7 @@ public class ThemeController
                     ReleaseDate = reader.GetDateTime(4),
                     Likes = reader.GetInt32(5),
                     Dislikes = reader.GetInt32(6),
-                    //Comments = reader.Get
+                    Comments = JsonStringToComments(reader.GetString(8))
                 };
                 return theme;
             }

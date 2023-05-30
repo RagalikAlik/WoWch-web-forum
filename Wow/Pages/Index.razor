@@ -39,15 +39,27 @@
                     </div>
                     <div class="article-comments">
                         <div class="comment">
-                            <div class="comment-header">
-                                <span class="comment-author">Author</span>
-                                @*<span class="comment-author">@comment.Author</span>*@
-                                @*<span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>*@
+                            
+                            @if(item.Comments != null)
+                            {
+                                @foreach(Comment comment in item.Comments)
+                                {
+                                    <div class="comment-header">
+                                        <span class="comment-author">@comment.Author</span>
+                                        <span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>
+                                    </div>
+                                    <div class="comment-body">
+                                        <p>@comment.Text</p>
+                                    </div>
+                                }
+                            }
+                            <div class="input-comment-container">
+                                <form>
+                                    <input class="comment-input" type="text" @bind="commentText" placeholder="Введите текст..." />
+                                    <input class="comment-submit" type="button" @onclick="() => HandleButtonCommentClick(item)" value="Отправить" />
+                                </form>
                             </div>
-                            <div class="comment-body">
-                                <p>Textffefeefefefefefffffffffffffffffffffffffffffffffffffffffffff</p>
-                                @*<p>@comment.Text</p>*@
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -68,6 +80,7 @@
 </body>
 
 @code{
+    private string commentText = string.Empty;
     List<Theme> themes = ThemeController.GetThemes();
 
     private void HandleButtonLikeClick(Theme theme)
@@ -80,6 +93,13 @@
     {
         if (AccountController.user != null)
             theme.AddDislike();
+    }
+
+    private void HandleButtonCommentClick(Theme theme)
+    {
+        Comment comment = new Comment(AccountController.user.Login, commentText);
+        theme.AddCommentToDb(theme ,comment);
+        commentText = string.Empty;
     }
 
 }

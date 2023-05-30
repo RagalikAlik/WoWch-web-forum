@@ -1,4 +1,6 @@
-﻿namespace Wow.Models
+﻿using Newtonsoft.Json;
+
+namespace Wow.Models
 {
     public class Comment
     {
@@ -23,6 +25,7 @@
             Dislikes = 0;
         }
 
+        [JsonConstructor]
         public Comment(string author, string text, DateTime timestamp, int likes, int dislikes)
         {
             Author = author;

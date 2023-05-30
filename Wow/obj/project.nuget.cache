@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8lF4dVVv1G+wPyfY6P0FQlYAUkzCZCRpQU6oYawxuBITWcerUWG5IWGuoNOQr5198+bVigLwK00ij6Gl41w/Jw==",
+  "dgSpecHash": "w09NVPLpitkMIu2T8OcCn1UFHW6x1thTdy5qZTHLQwqgrEwp8pujg+z07IQ/7ZJzIhquBxde2gIXcB8ElbREPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\Wow.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\nzavi\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net461\\1.0.3\\microsoft.netframework.referenceassemblies.net461.1.0.3.nupkg.sha512",
     "C:\\Users\\nzavi\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\nzavi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\nzavi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\nzavi\\.nuget\\packages\\npgsql\\7.0.2\\npgsql.7.0.2.nupkg.sha512",
     "C:\\Users\\nzavi\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.3\\npgsql.entityframeworkcore.postgresql.7.0.3.nupkg.sha512",
     "C:\\Users\\nzavi\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

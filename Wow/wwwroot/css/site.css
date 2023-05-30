@@ -108,18 +108,18 @@ a, .btn-link {
     list-style-type: none;
 }
 
-    .nav-item > a {
-        font-family: inherit;
-        list-style-type: none;
-        margin-right: 20px;
-        text-decoration: none;
-        color: black;
-    }
+.nav-item > a {
+    font-family: inherit;
+    list-style-type: none;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
 
-    .nav-item > .nav-link:hover {
-        font-family: inherit;
-        color: orange;
-    }
+.nav-item > .nav-link:hover {
+    font-family: inherit;
+    color: orange;
+}
 
 .nav-link {
     color: white;
@@ -194,6 +194,7 @@ a, .btn-link {
 .article{
     width: 80%;
     border: black solid 2px;
+    margin-bottom: 3%;
 }
 
 .article-footer{
@@ -243,4 +244,22 @@ a, .btn-link {
 .article-rating input{
     height: 30px;
     margin-top: 5px;
+}
+
+.input-comment-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+form{
+    width:100%;
+}
+
+.comment-input {
+    width: 70%;
+}
+
+.comment-submit{
+    width: 20%;
 }
