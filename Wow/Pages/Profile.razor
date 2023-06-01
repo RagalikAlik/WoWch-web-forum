@@ -27,6 +27,64 @@
             Дата регистрации: @AccountController.user.RegistrationDate
         </p>
     </div>
+
+    <div class="user-articles">
+        @foreach (var item in themes)
+        {
+            @if (item.Creator.Equals(AccountController.user.Login))
+            {
+                <div class="article">
+                    <div class="article-header">
+                        <a>@item.Creator</a>
+                        <p class="article-header-text">@item.Header</p>
+                        <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
+                        @if (AccountController.user != null && item.Creator.Equals(AccountController.user.Login))
+                        {
+                            <input type="button" value="Редактировать" @onclick="() => HandleButtonEditClick(item)" />
+                        }
+                    </div>
+                    <div class="article-text">
+                        @item.Text
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <input type="button" @onclick="() => HandleButtonLikeClick(item)" value="Понравилось" />
+                            <p>@item.Likes</p>
+                        </div>
+                        <div class="article-rating">
+                            <input type="button" @onclick="() => HandleButtonDislikeClick(item)" value="Не понравилось" />
+                            <p>@item.Dislikes</p>
+                        </div>
+                    </div>
+                    <div class="article-comments">
+                        <div class="comment">
+
+                            @if (item.Comments != null)
+                            {
+                                @foreach (Comment comment in item.Comments)
+                                {
+                                    <div class="comment-header">
+                                        <span class="comment-author">@comment.Author</span>
+                                        <span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>
+                                    </div>
+                                    <div class="comment-body">
+                                        <p>@comment.Text</p>
+                                    </div>
+                                }
+                            }
+                            <div class="input-comment-container">
+                            <form>
+                                <input class="comment-input" type="text" @bind="commentText" placeholder="Введите текст..." />
+                                <input class="comment-submit" type="button" @onclick="() => HandleButtonCommentClick(item)" value="Отправить" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        }
+    </div>
+
 </body>
 
 
@@ -75,6 +133,33 @@
             await stream.CopyToAsync(memoryStream);
             return memoryStream.ToArray();
         }
+    }
+
+    private string commentText = string.Empty;
+    List<Theme> themes = ThemeController.GetThemes();
+
+    private void HandleButtonLikeClick(Theme theme)
+    {
+        if (AccountController.user != null)
+            theme.AddLike();
+    }
+
+    private void HandleButtonDislikeClick(Theme theme)
+    {
+        if (AccountController.user != null)
+            theme.AddDislike();
+    }
+
+    private void HandleButtonEditClick(Theme theme)
+    {
+
+    }
+
+    private void HandleButtonCommentClick(Theme theme)
+    {
+        Comment comment = new Comment(AccountController.user.Login, commentText);
+        theme.AddCommentToDb(theme, comment);
+        commentText = string.Empty;
     }
 }
     

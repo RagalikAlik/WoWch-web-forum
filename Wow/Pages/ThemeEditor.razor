@@ -56,7 +56,6 @@
 
                     </ToolbarContent>
                 </BlazoredTextEditor>
-                <InputFile multiple="multiple" OnChange="HandleFileSelection" />
 
             </div>
             <div class="card-footer">
@@ -83,31 +82,7 @@
         HeaderValue = e.Value.ToString();
     }
 
-    private void HandleFileSelection(InputFileChangeEventArgs e)
-    {
-        selectedFiles.AddRange(e.GetMultipleFiles());
-    }
 
-    private async Task UploadFiles()
-    {
-
-        foreach (var file in selectedFiles)
-        {
-            Photo photo = new Photo();
-
-            //var imgFile = await file.RequestImageFileAsync(file.ContentType, 226, 223);
-
-            //var buffers = new byte[imgFile.Size];
-            //await imgFile.OpenReadStream().ReadAsync(buffers);
-            //string imageType = imgFile.ContentType;
-
-            ////photo.Id = AccountController.user.Id;
-            //photo.ThemeId = imgFile.Name;
-            //photo.ImageData = await ReadFileData(imgFile);
-            //photo.SavePhoto();
-            //StateHasChanged();
-        }
-    }
 
     private async Task SaveTheme()
     {
