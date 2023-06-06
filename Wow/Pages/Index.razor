@@ -24,6 +24,13 @@
                         <a>@item.Creator</a>
                         <p class="article-header-text">@item.Header</p>
                         <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
+                        @if (AccountController.user != null)
+                        {
+                            @if (AccountController.user.Login.Equals(item.Creator) || AccountController.user.Role.Equals("admin"))
+                            {
+                                <input class="delete-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteArticleClick(item)" />
+                            }
+                        }
                         @if (AccountController.user!=null && item.Creator.Equals(AccountController.user.Login))
                         {
                             <input type="button" value="Редактировать" @onclick="() => HandleButtonEditClick(item)" />
@@ -51,6 +58,13 @@
                                 {
                                     <div class="comment-header">
                                         <span class="comment-author">@comment.Author</span>
+                                        @if (AccountController.user != null)
+                                        {
+                                            @if (AccountController.user.Login.Equals(comment.Author) || AccountController.user.Role.Equals("admin"))
+                                            {
+                                                <input class="delete-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteCommentClick(item, comment)" />
+                                            }
+                                        }
                                         <span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>
                                     </div>
                                     <div class="comment-body">
@@ -101,14 +115,31 @@
 
     private void HandleButtonEditClick(Theme theme)
     {
-        
+
+    }
+
+    private void HandleButtonDeleteArticleClick(Theme theme)
+    {
+        if (AccountController.user != null || AccountController.user.Role.Equals("admin"))
+            theme.DropArticle();
     }
 
     private void HandleButtonCommentClick(Theme theme)
     {
-        Comment comment = new Comment(AccountController.user.Login, commentText);
-        theme.AddCommentToDb(theme ,comment);
-        commentText = string.Empty;
+        if (AccountController.user != null)
+        {
+            Comment comment = new Comment(AccountController.user.Login, commentText);
+            theme.AddCommentToDb(theme ,comment);
+            commentText = string.Empty;
+        }
+    }
+
+    private void HandleButtonDeleteCommentClick(Theme theme, Comment comment)
+    {
+        if(AccountController.user != null)
+        {
+            theme.RemoveComment(comment);
+        }
     }
 
 }

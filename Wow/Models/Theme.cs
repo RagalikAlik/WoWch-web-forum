@@ -16,7 +16,7 @@ public class Theme
     private DateTime _releaseDate;
     private int _likes;
     private int _dislikes;
-    private List<Comment> _comments =  new List<Comment>();
+    private List<Comment> _comments;
     
 
     public int Id { get { return this._id; } set { this._id = value; } }
@@ -47,6 +47,7 @@ public class Theme
         Cathegory = cathegory;
         Header = header;
         ReleaseDate = releaseDate;
+        Comments = new List<Comment>();
     }
 
 
@@ -100,6 +101,36 @@ public class Theme
             var cmd = new NpgsqlCommand();
             cmd.CommandText = $"update themes set comments = @comments where id = @id";
             cmd.Parameters.AddWithValue("@id", theme.Id);
+            cmd.Parameters.AddWithValue("@comments", comms);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void DropArticle()
+    {
+        using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+        {
+            conn.Open();
+            var cmd = new NpgsqlCommand();
+            cmd.CommandText = $"delete from themes where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void RemoveComment(Comment comment)
+    {
+        Comments.Remove(comment);
+        using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+        {
+            string comms = ThemeController.CommentsToJsonString(Comments);
+
+            conn.Open();
+            var cmd = new NpgsqlCommand();
+            cmd.CommandText = $"update themes set comments = @comments where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
             cmd.Parameters.AddWithValue("@comments", comms);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();

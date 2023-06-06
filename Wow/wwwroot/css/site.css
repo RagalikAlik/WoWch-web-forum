@@ -176,10 +176,11 @@ a, .btn-link {
 }
 
 
-.article-header{
+.article-header {
     border-bottom: solid black 2px;
-    display:flex;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .article-header-text{
@@ -264,3 +265,13 @@ form{
     width: 20%;
 }
 
+.delete-button{
+    background-color: red;
+    border-radius: 2px;
+}
+
+.delete-button:hover{
+    background-color: black;
+    color: white;
+    border-radius: 0px;
+}

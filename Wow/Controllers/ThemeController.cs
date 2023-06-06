@@ -21,7 +21,7 @@ public class ThemeController
         cmd.CommandText = $"INSERT INTO themes(RELEASEDATE, CREATOR, TEXT, HEADER, CATHEGORY) VALUES (@releaseDate, @creator, @text, @header, @cathegory);";
         cmd.Parameters.AddWithValue("@releaseDate", theme.ReleaseDate);
         cmd.Parameters.AddWithValue("@creator", theme.Creator);
-        cmd.Parameters.AddWithValue("@text", theme.Text);
+        cmd.Parameters.AddWithValue("@text", theme.Text.ToString());
         cmd.Parameters.AddWithValue("@header", theme.Header);
         cmd.Parameters.AddWithValue("@cathegory", theme.Cathegory);
         cmd.Connection = conn;
@@ -78,9 +78,7 @@ public class ThemeController
         List<Comment> comments = JsonConvert.DeserializeObject<List<Comment>>(json);
         return comments;
     }
-
     
-
     public static Theme GetThemeWithMaxLikes()
     {
         var conn = new NpgsqlConnection(link);
