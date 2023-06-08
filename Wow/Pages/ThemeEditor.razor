@@ -3,6 +3,7 @@
 @using Wow.Controllers
 @using Wow.Models
 @using Blazored.TextEditor
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Редактор статьи</PageTitle>
 
@@ -92,6 +93,7 @@
             var a = await QuillHtml.GetHTML();
             Theme theme = new Theme(AccountController.user.Login, a, selectedValue, HeaderValue, DateTime.Now);
             await ThemeController.WriteTheme(theme);
+            await JSRuntime.InvokeVoidAsync("alert", "Публикация создана.");
         }
     }
 }

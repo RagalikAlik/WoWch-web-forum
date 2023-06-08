@@ -175,6 +175,10 @@ a, .btn-link {
 
 }
 
+.article-creator{
+    font-size: 14pt;
+    margin-left: 10px;
+}
 
 .article-header {
     border-bottom: solid black 2px;
@@ -192,16 +196,25 @@ a, .btn-link {
 
 }
 
-.article{
+.article-stats{
+    
+}
+
+.article {
     width: 80%;
     border: black solid 2px;
     margin-bottom: 3%;
+    border-radius: 15px;
 }
 
 .article-footer{
     display: flex;
     flex-direction: row;
     border-top: solid black 2px;
+}
+
+.article-views{
+    margin-right:5%;
 }
 
 .comment {
@@ -265,13 +278,32 @@ form{
     width: 20%;
 }
 
-.delete-button{
+.delete-button {
     background-color: red;
-    border-radius: 2px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    height: 50px;
 }
 
-.delete-button:hover{
+.delete-button:hover {
     background-color: black;
+    border-radius: 15px;
     color: white;
-    border-radius: 0px;
+}
+
+.edit-button{
+    border: none;
+    border-radius: 15px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;    
+    height: 50px;
+}
+
+.edit-button:hover {
+    background-color: #2980b9;
 }

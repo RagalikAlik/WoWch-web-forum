@@ -22,10 +22,10 @@
                 item.AddView();
                 <div class="article">
                     <div class="article-header">
-                        <a>@item.Creator</a>
+                        <p class="article-creator">@item.Creator</p>
                         <p class="article-header-text">@item.Header</p>
-                        <div>
-                            <p>Просмотры: @item.Views</p>
+                        <div class="article-stats">
+                            <p class="article-views">Просмотры: @item.Views</p>
                             <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
                         </div>
                         @if (AccountController.user != null)
@@ -37,7 +37,7 @@
                         }
                         @if (AccountController.user!=null && item.Creator.Equals(AccountController.user.Login))
                         {
-                            <input type="button" value="Редактировать" @onclick="() => HandleButtonEditClick(item)" />
+                            <input class="edit-button" type="button" value="Редактировать" @onclick="() => HandleButtonEditClick(item)" />
                         }
                     </div>
                     <div class="article-text">
@@ -66,7 +66,7 @@
                                         {
                                             @if (AccountController.user.Login.Equals(comment.Author) || AccountController.user.Role.Equals("admin"))
                                             {
-                                                <input class="delete-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteCommentClick(item, comment)" />
+                                                <input class="delete-comment-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteCommentClick(item, comment)" />
                                             }
                                         }
                                         <span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>

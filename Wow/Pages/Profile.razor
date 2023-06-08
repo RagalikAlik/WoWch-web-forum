@@ -1,6 +1,7 @@
 ﻿@page "/profile"
 @using Wow.Controllers
 @using Wow.Models;
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Профиль @AccountController.user.Login | WoWch</PageTitle>
 
@@ -122,6 +123,7 @@
         photo.FileName = imgFile.Name;
         photo.ImageData = await ReadFileData(imgFile);
         photo.SavePhoto();
+        await JSRuntime.InvokeVoidAsync("alert", "Аватар изменён.");
         StateHasChanged();
     }
 

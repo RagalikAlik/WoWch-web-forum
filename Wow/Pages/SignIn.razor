@@ -3,7 +3,7 @@
 @using Wow.Models
 
 @inject NavigationManager Navigation
-@inject IJSRuntime Js
+@inject IJSRuntime JSRuntime
 
 <head>
     <link rel="stylesheet" href="css/Registration.css">
@@ -34,16 +34,20 @@
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true);
     static readonly IConfiguration Configuration = builder.Build();
-        
+
     private static readonly string? Link =Configuration.GetConnectionString("DefaultConnection");
 
-    
+
     async void GetUserFromDb()
     {
         //await Js.InvokeVoidAsync("showUser");
         Navigation.NavigateTo("/", true);
-        if (login != null && password != null) 
-            AccountController.user = await AccountController.Authorization(login , password);
+        if (login != null && password != null)
+        {
+            AccountController.user = await AccountController.Authorization(login , password);  
+            await JSRuntime.InvokeVoidAsync("alert", "Вы вошли в аккаунт.");
+        }
+        
 
     }
 }
