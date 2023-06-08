@@ -5,6 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Internal;
 using Wow.Controllers;
 using Wow.Models;
 using System.IO;
+using System.Xml.Linq;
 
 
 namespace Wow.Controllers
@@ -122,6 +123,19 @@ namespace Wow.Controllers
             }
 
             return image;
+        }
+
+        public static void BanAccount(string userLogin)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+            {
+                conn.Open();
+                var cmd = new NpgsqlCommand();
+                cmd.CommandText = $"update users set status = 'banned' where login = @login";
+                cmd.Parameters.AddWithValue("@login", userLogin);
+                cmd.Connection = conn;
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ public class Theme
     private int _likes;
     private int _dislikes;
     private List<Comment> _comments;
+    private int views;
     
 
     public int Id { get { return this._id; } set { this._id = value; } }
@@ -28,6 +29,7 @@ public class Theme
     public int Likes { get { return this._likes; } set { this._likes = value; } }
     public int Dislikes{ get { return this._dislikes; } set { this._dislikes = value; } }
     public List<Comment> Comments { get { return _comments; } set { _comments = value; } }
+    public int Views { get { return views; } set { views = value; } }
 
 
     static IConfigurationBuilder builder = new ConfigurationBuilder()
@@ -51,7 +53,7 @@ public class Theme
     }
 
 
-    public Theme(int id, string creator, string text, string header, string cathegory, DateTime releaseDate, int likes, int dislikes, List<Comment> comments)
+    public Theme(int id, string creator, string text, string header, string cathegory, DateTime releaseDate, int likes, int dislikes, List<Comment> comments, int views)
     {
         Id = id;
         Creator = creator;
@@ -62,6 +64,7 @@ public class Theme
         Likes = likes;
         Dislikes = dislikes;
         Comments = comments;
+        Views = views;
     }
 
     public void AddLike()
@@ -132,6 +135,19 @@ public class Theme
             cmd.CommandText = $"update themes set comments = @comments where id = @id";
             cmd.Parameters.AddWithValue("@id", Id);
             cmd.Parameters.AddWithValue("@comments", comms);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void AddView()
+    {
+        using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+        {
+            conn.Open();
+            var cmd = new NpgsqlCommand();
+            cmd.CommandText = $"update themes set views = views+1 where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
         }

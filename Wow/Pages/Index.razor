@@ -12,18 +12,22 @@
         <div style="width:85%; height:100%;">
             <h2 style="margin-left: 10%">Форум</h2>
             <div>
-                <h3>Гайды</h3>
+                 @*<h3>Гайды</h3>*@
                 <ul>
                     <li><a> </a></li>
                 </ul>
             </div>
             @foreach(var item in themes)
             {
+                item.AddView();
                 <div class="article">
                     <div class="article-header">
                         <a>@item.Creator</a>
                         <p class="article-header-text">@item.Header</p>
-                        <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
+                        <div>
+                            <p>Просмотры: @item.Views</p>
+                            <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
+                        </div>
                         @if (AccountController.user != null)
                         {
                             @if (AccountController.user.Login.Equals(item.Creator) || AccountController.user.Role.Equals("admin"))

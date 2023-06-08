@@ -54,7 +54,8 @@ public class ThemeController
                         ReleaseDate = reader.GetDateTime(4),
                         Likes = reader.GetInt32(5),
                         Dislikes = reader.GetInt32(6),
-                        Comments = reader.IsDBNull(8) ? null : JsonStringToComments(reader.GetString(8))
+                        Comments = reader.IsDBNull(8) ? null : JsonStringToComments(reader.GetString(8)),
+                        Views = reader.GetInt32(9)
                     };
                     themes.Add(theme);
                 }
@@ -101,7 +102,8 @@ public class ThemeController
                     ReleaseDate = reader.GetDateTime(4),
                     Likes = reader.GetInt32(5),
                     Dislikes = reader.GetInt32(6),
-                    Comments = JsonStringToComments(reader.GetString(8))
+                    Comments = JsonStringToComments(reader.GetString(8)),
+                    Views = reader.GetInt32(9)
                 };
                 return theme;
             }
@@ -132,7 +134,8 @@ public class ThemeController
                     ReleaseDate = reader.GetDateTime(4),
                     Likes = reader.GetInt32(5),
                     Dislikes = reader.GetInt32(6),
-                    Comments = JsonStringToComments(reader.GetString(8))
+                    Comments = JsonStringToComments(reader.GetString(8)),
+                    Views = reader.GetInt32(9)
                 };
                 return theme;
             }
