@@ -2,6 +2,8 @@
 @using Wow.Controllers
 @using Wow.Models
 @using Microsoft.AspNetCore.Components
+@using Npgsql;
+@using Blazored.TextEditor;
 
 <PageTitle>WoWch</PageTitle>
 <head>
@@ -53,6 +55,48 @@
                             <p>@item.Dislikes</p>
                         </div>                       
                     </div>
+                                        @if (showElement)
+                    {
+                         <div class="card-body mb-5" style="height:500px;">
+                <BlazoredTextEditor @ref=QuillHtml Placeholder="Текст статьи...">
+                    <ToolbarContent>
+                        <select class="ql-header">
+                            <option selected=""></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                        </select>
+                        <span class="ql-formats">
+                            <button class="ql-bold"></button>
+                            <button class="ql-italic"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-strike"></button>
+                        </span>
+                        <span class="ql-formats"> 
+                            <select class="ql-color"></select> 
+                            <select class="ql-background"></select> 
+                        </span> 
+                        <span class="ql-formats">
+                            <button class="ql-list" value="ordered"></button>
+                            <button class="ql-list" value="bullet"></button> 
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-link"></button> 
+                        </span> 
+                        <span class="ql-formats">
+                            <button class="ql-video"></button> 
+                        </span>
+
+                    </ToolbarContent>
+                </BlazoredTextEditor>
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success" @onclick=@(async ()=> await SaveTheme(item) )>Готово</button>
+            </div>
+                    }
                     <div class="article-comments">
                         <div class="comment">
                             
@@ -93,7 +137,6 @@
             <div style="border: solid orange 2px">
                 <p>кол-во пользователей: @String.Join(" ",MainController.GetAmountOfUsers())</p>
                 <p>кол-во статей: @String.Join(" ",MainController.GetAmountOfArticles())</p>
-                <p>новый пользователь: </p>
             </div>
         </div>
     </div>
@@ -102,8 +145,31 @@
 </body>
 
 @code{
+    private BlazoredTextEditor? QuillHtml;
     private string commentText = string.Empty;
+    private static bool showElement = false;
     List<Theme> themes = ThemeController.GetThemes();
+    private const string Link = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
+
+    private async Task SaveTheme(Theme theme)
+    {
+        await using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+        {
+            conn.ConnectionString = Link;
+            conn.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand();
+            cmd.CommandText = $"UPDATE themes SET text = @text WHERE id = @id";
+            cmd.Parameters.AddWithValue("@text", QuillHtml.ToString());
+            cmd.Parameters.AddWithValue("@id", theme.Id);
+            cmd.Connection = conn;
+            cmd.ExecuteScalar();
+        }
+    }
+
+    private void ToggleElement()
+    {
+        showElement = !showElement;
+    }
 
     private void HandleButtonLikeClick(Theme theme)
     {
@@ -119,7 +185,9 @@
 
     private void HandleButtonEditClick(Theme theme)
     {
-
+        ToggleElement();
+        ThemeController.themeTextForEditor = theme.Text.ToString();
+        ThemeController.themeIdForEditor = theme.Id;
     }
 
     private void HandleButtonDeleteArticleClick(Theme theme)

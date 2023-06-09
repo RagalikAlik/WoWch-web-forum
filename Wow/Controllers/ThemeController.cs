@@ -10,6 +10,8 @@ namespace Wow.Controllers;
 
 public class ThemeController
 {
+    public static string themeTextForEditor = string.Empty;
+    public static int themeIdForEditor = 0;
     private const string link = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
 
     public static async Task WriteTheme(Theme theme)

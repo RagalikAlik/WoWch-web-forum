@@ -20,7 +20,7 @@
                 <input class="input-field" type="password" @bind="password" placeholder="Пароль" required>
             </div>
             <div class="input-button-container">
-                <input class="reg-button" type="submit" @onclick="GetUserFromDb" value="Войти"/>
+                <input class="reg-button" type="submit" @onclick="Authorization" value="Войти"/>
             </div>
         </form>
     </div>
@@ -38,16 +38,42 @@
     private static readonly string? Link =Configuration.GetConnectionString("DefaultConnection");
 
 
-    async void GetUserFromDb()
+
+    async Task Authorization()
     {
-        //await Js.InvokeVoidAsync("showUser");
-        Navigation.NavigateTo("/", true);
         if (login != null && password != null)
         {
-            AccountController.user = await AccountController.Authorization(login , password);  
-            await JSRuntime.InvokeVoidAsync("alert", "Вы вошли в аккаунт.");
+            try
+            {
+                User checkUser = await AccountController.Authorization(login, password);
+                if(checkUser.Status == "banned")
+                {
+                    await JSRuntime.InvokeVoidAsync("alert", "Этот аккаунт заблокирован.");
+                    Navigation.NavigateTo("/signin", true);
+                }
+                else
+                {
+                    if (checkUser != null && checkUser.Password.Equals(password))
+                    {
+                        Navigation.NavigateTo("/", true);
+                        await JSRuntime.InvokeVoidAsync("alert", "Вы вошли в аккаунт.");
+                        AccountController.user = checkUser;
+                    }
+                    else
+                    {
+                        await JSRuntime.InvokeVoidAsync("alert", "Неверный пароль.");
+                        Navigation.NavigateTo("/signin", true);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                await JSRuntime.InvokeVoidAsync("alert", e.Message.ToString());
+            }
         }
-        
-
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Введите данные.");
+        }
     }
 }

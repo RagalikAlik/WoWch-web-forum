@@ -56,3 +56,4 @@ C:\Users\nzavi\source\repos\Wow\Wow\obj\Debug\net7.0\Wow.csproj.CopyComplete
 C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\libman.json
 C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\Blazored.TextEditor.dll
 C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\nzavi\source\repos\Wow\Wow\bin\Debug\net7.0\Microsoft.JSInterop.dll
