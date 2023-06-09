@@ -8,10 +8,9 @@
 <head>
     <link rel="stylesheet" href="css/Registration.css">
 </head>
-<body>
-<div>
-    <div style="margin-left: 40%">
-        <h2>Авторизация</h2>
+<body class="signit-body">
+    <div class="login-container">
+        <h2 class="login-title">Авторизация</h2>
         <form method="post">
             <div class="input-container">
                 <input class="input-field" type="text" @bind="login" placeholder="Логин" required>
@@ -20,11 +19,10 @@
                 <input class="input-field" type="password" @bind="password" placeholder="Пароль" required>
             </div>
             <div class="input-button-container">
-                <input class="reg-button" type="submit" @onclick="Authorization" value="Войти"/>
+                <input class="login-button" type="submit" @onclick="Authorization" value="Войти" />
             </div>
         </form>
     </div>
-</div>
 </body>
 
 @code{

@@ -15,9 +15,6 @@
             <h2 style="margin-left: 10%">Форум</h2>
             <div>
                  @*<h3>Гайды</h3>*@
-                <ul>
-                    <li><a> </a></li>
-                </ul>
             </div>
             @foreach(var item in themes)
             {
@@ -47,15 +44,15 @@
                     </div>
                     <div class="article-footer">
                         <div class="article-rating">
-                            <input type="button" @onclick="() => HandleButtonLikeClick(item)" value="Понравилось" />
-                            <p>@item.Likes</p>
+                            <input class="comment-submit" type="button" @onclick="() => HandleButtonLikeClick(item)" value="Понравилось" />
+                            <p class="comment-rating-number">@item.Likes</p>
                         </div>
                         <div class="article-rating">
-                            <input type="button" @onclick="() => HandleButtonDislikeClick(item)" value="Не понравилось" />
-                            <p>@item.Dislikes</p>
+                            <input class="comment-submit" type="button" @onclick="() => HandleButtonDislikeClick(item)" value="Не понравилось" />
+                            <p class="comment-rating-number">@item.Dislikes</p>
                         </div>                       
                     </div>
-                                        @if (showElement)
+                   @if (showElement)
                     {
                          <div class="card-body mb-5" style="height:500px;">
                 <BlazoredTextEditor @ref=QuillHtml Placeholder="Текст статьи...">
@@ -130,13 +127,18 @@
                     </div>
                 </div>
             }
-
         </div>
         <div style="width:15%; height:100%;">
-            <p>Статистика сайта</p>
-            <div style="border: solid orange 2px">
-                <p>кол-во пользователей: @String.Join(" ",MainController.GetAmountOfUsers())</p>
-                <p>кол-во статей: @String.Join(" ",MainController.GetAmountOfArticles())</p>
+            <div class="stats-container">
+                <p class="stats-title">Статистика сайта</p>
+                <div class="stats-item">
+                    <span class="stats-key">кол-во пользователей:</span>
+                    <span class="stats-value">@String.Join(" ",MainController.GetAmountOfUsers())</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-key">кол-во статей:</span>
+                    <span class="stats-value">@String.Join(" ",MainController.GetAmountOfArticles())</span>
+                </div>
             </div>
         </div>
     </div>
