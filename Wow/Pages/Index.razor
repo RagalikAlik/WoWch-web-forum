@@ -4,102 +4,113 @@
 @using Microsoft.AspNetCore.Components
 @using Npgsql;
 @using Blazored.TextEditor;
+@using System.Linq;
 
 <PageTitle>WoWch</PageTitle>
 <head>
-    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body style="width: 100%; height: 100%">
     <div style="display: flex; flex-direction:row;">
         <div style="width:85%; height:100%;">
             <h2 style="margin-left: 10%">Форум</h2>
-            <div>
-                 @*<h3>Гайды</h3>*@
+            <div class="category-buttons">
+                <input type="button" class="category-button" @onclick='() => {cathegory = "Без категории";SortCathegories();} ' value="Без категории" />
+                <input type="button" class="category-button" @onclick='() => {cathegory = "Новости";SortCathegories();} ' value="Новости" />
+                <input type="button" class="category-button" @onclick='() => {cathegory = "Игровые вопросы";SortCathegories();}' value="Игровые вопросы" />
+                <input type="button" class="category-button" @onclick='() => {cathegory = "Аддоны"; SortCathegories();}' value="Аддоны" />
+                <input type="button" class="category-button" @onclick='() => {cathegory = "Гайды"; SortCathegories(); }' value="Гайды" />
             </div>
-            @foreach(var item in themes)
+            @foreach (var item in qwe)
             {
-                item.AddView();
+                item.theme.AddView();
                 <div class="article">
                     <div class="article-header">
-                        <p class="article-creator">@item.Creator</p>
-                        <p class="article-header-text">@item.Header</p>
+                        <p class="article-creator">@item.theme.Creator</p>
+                        <p class="article-header-text">@item.theme.Header</p>
                         <div class="article-stats">
-                            <p class="article-views">Просмотры: @item.Views</p>
-                            <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
+                            <p class="article-views">Просмотры: @item.theme.Views</p>
+                            <span class="comment-timestamp">@item.theme.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
                         </div>
                         @if (AccountController.user != null)
                         {
-                            @if (AccountController.user.Login.Equals(item.Creator) || AccountController.user.Role.Equals("admin"))
+                            @if (AccountController.user.Login.Equals(item.theme.Creator) || AccountController.user.Role.Equals("admin"))
                             {
-                                <input class="delete-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteArticleClick(item)" />
+                                <input class="delete-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteArticleClick(item.theme)" />
                             }
                         }
-                        @if (AccountController.user!=null && item.Creator.Equals(AccountController.user.Login))
+                        @if (AccountController.user != null && item.theme.Creator.Equals(AccountController.user.Login))
                         {
-                            <input class="edit-button" type="button" value="Редактировать" @onclick="() => HandleButtonEditClick(item)" />
+                            <input class="edit-button" type="button" value="Редактировать" @onclick="() => {item.editing = !item.editing;}" />
                         }
                     </div>
                     <div class="article-text">
-                        @item.Text
+                        @item.theme.Text
                     </div>
                     <div class="article-footer">
                         <div class="article-rating">
-                            <input class="comment-submit" type="button" @onclick="() => HandleButtonLikeClick(item)" value="Понравилось" />
-                            <p class="comment-rating-number">@item.Likes</p>
+                            <input class="comment-submit" type="button" @onclick="() => HandleButtonLikeClick(item.theme)" value="Понравилось" />
+                            <p class="comment-rating-number">@item.theme.Likes</p>
                         </div>
                         <div class="article-rating">
-                            <input class="comment-submit" type="button" @onclick="() => HandleButtonDislikeClick(item)" value="Не понравилось" />
-                            <p class="comment-rating-number">@item.Dislikes</p>
-                        </div>                       
+                            <input class="comment-submit" type="button" @onclick="() => HandleButtonDislikeClick(item.theme)" value="Не понравилось" />
+                            <p class="comment-rating-number">@item.theme.Dislikes</p>
+                        </div>
                     </div>
-                   @if (showElement)
+                    @code {
+                    BlazoredTextEditor? QuillHtml;
+                }
+
+                @if (item.editing && item.theme.Creator == AccountController.user.Login)
                     {
-                         <div class="card-body mb-5" style="height:500px;">
-                <BlazoredTextEditor @ref=QuillHtml Placeholder="Текст статьи...">
-                    <ToolbarContent>
-                        <select class="ql-header">
-                            <option selected=""></option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="4"></option>
-                            <option value="5"></option>
-                        </select>
-                        <span class="ql-formats">
-                            <button class="ql-bold"></button>
-                            <button class="ql-italic"></button>
-                            <button class="ql-underline"></button>
-                            <button class="ql-strike"></button>
-                        </span>
-                        <span class="ql-formats"> 
-                            <select class="ql-color"></select> 
-                            <select class="ql-background"></select> 
-                        </span> 
-                        <span class="ql-formats">
-                            <button class="ql-list" value="ordered"></button>
-                            <button class="ql-list" value="bullet"></button> 
-                        </span>
-                        <span class="ql-formats">
-                            <button class="ql-link"></button> 
-                        </span> 
-                        <span class="ql-formats">
-                            <button class="ql-video"></button> 
-                        </span>
 
-                    </ToolbarContent>
-                </BlazoredTextEditor>
 
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-success" @onclick=@(async ()=> await SaveTheme(item) )>Готово</button>
-            </div>
+                        <div class="card-body mb-5" style="height:500px;">
+                            <BlazoredTextEditor @ref=QuillHtml Placeholder="Текст статьи...">
+                                <ToolbarContent>
+                                    <select class="ql-header">
+                                        <option selected=""></option>
+                                        <option value="1"></option>
+                                        <option value="2"></option>
+                                        <option value="3"></option>
+                                        <option value="4"></option>
+                                        <option value="5"></option>
+                                    </select>
+                                    <span class="ql-formats">
+                                        <button class="ql-bold"></button>
+                                        <button class="ql-italic"></button>
+                                        <button class="ql-underline"></button>
+                                        <button class="ql-strike"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <select class="ql-color"></select>
+                                        <select class="ql-background"></select>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-list" value="ordered"></button>
+                                        <button class="ql-list" value="bullet"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-link"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-video"></button>
+                                    </span>
+
+                                </ToolbarContent>
+                            </BlazoredTextEditor>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success" @onclick=@(async ()=> await SaveChanges(item.theme, QuillHtml) )>Готово</button>
+                        </div>
                     }
                     <div class="article-comments">
                         <div class="comment">
-                            
-                            @if(item.Comments != null)
+
+                            @if (item.theme.Comments != null)
                             {
-                                @foreach(Comment comment in item.Comments)
+                                @foreach (Comment comment in item.theme.Comments)
                                 {
                                     <div class="comment-header">
                                         <span class="comment-author">@comment.Author</span>
@@ -107,7 +118,7 @@
                                         {
                                             @if (AccountController.user.Login.Equals(comment.Author) || AccountController.user.Role.Equals("admin"))
                                             {
-                                                <input class="delete-comment-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteCommentClick(item, comment)" />
+                                                <input class="delete-comment-button" type="button" value="Удалить" @onclick="() => HandleButtonDeleteCommentClick(item.theme, comment)" />
                                             }
                                         }
                                         <span class="comment-timestamp">@comment.Timestamp.ToString("dd.MM.yyyy HH:mm")</span>
@@ -120,9 +131,9 @@
                             <div class="input-comment-container">
                                 <form>
                                     <input class="comment-input" type="text" @bind="commentText" placeholder="Введите текст..." />
-                                    <input class="comment-submit" type="button" @onclick="() => HandleButtonCommentClick(item)" value="Отправить" />
+                                    <input class="comment-submit" type="button" @onclick="() => HandleButtonCommentClick(item.theme)" value="Отправить" />
                                 </form>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -142,78 +153,103 @@
             </div>
         </div>
     </div>
-    
+
 
 </body>
 
-@code{
-    private BlazoredTextEditor? QuillHtml;
-    private string commentText = string.Empty;
-    private static bool showElement = false;
-    List<Theme> themes = ThemeController.GetThemes();
-    private const string Link = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
 
-    private async Task SaveTheme(Theme theme)
-    {
-        await using (NpgsqlConnection conn = new NpgsqlConnection(Link))
-        {
-            conn.ConnectionString = Link;
-            conn.Open();
-            NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.CommandText = $"UPDATE themes SET text = @text WHERE id = @id";
-            cmd.Parameters.AddWithValue("@text", QuillHtml.ToString());
-            cmd.Parameters.AddWithValue("@id", theme.Id);
-            cmd.Connection = conn;
-            cmd.ExecuteScalar();
-        }
+@code {
+    private string commentText = string.Empty;
+    List<Theme> themes = ThemeController.GetThemes();
+
+    public class Pipa{
+        public Theme theme { get; set; }
+        public bool editing { get; set; }
     }
 
-    private void ToggleElement()
+    static List<Pipa> qwe = GetTopics();
+    static List<Pipa> all = GetTopics();
+    static string cathegory = "";
+    static void SortCathegories()
     {
-        showElement = !showElement;
+        all = GetTopics();
+        if (cathegory != "")
+            qwe = all.Where(x => x.theme.Cathegory.Equals(cathegory)).ToList();
+        else
+            qwe = all;
+    }
+
+    public static List<Pipa> GetTopics()
+    {
+       
+    List<Theme> themes = ThemeController.GetThemes();
+    List<Pipa> res = new List<Pipa>() { };
+    foreach (var i in themes)
+    {
+        res.Add(new Pipa() { theme = i, editing = false });
+    }
+    return res;
+    }
+
+    private const string Link = "Server=localhost;Port=5432;Username=user;Password=password;Database=postgres";
+
+    private async Task SaveChanges(Theme theme, BlazoredTextEditor? QuillHtml)
+    {
+    await using (NpgsqlConnection conn = new NpgsqlConnection(Link))
+    {
+        conn.ConnectionString = Link;
+        conn.Open();
+        NpgsqlCommand cmd = new NpgsqlCommand();
+        cmd.CommandText = $"UPDATE themes SET text = @text WHERE id = @id";
+        cmd.Parameters.AddWithValue("@text", (await QuillHtml.GetHTML()).ToString());
+        cmd.Parameters.AddWithValue("@id", theme.Id);
+        cmd.Connection = conn;
+        cmd.ExecuteScalar();
+    }
     }
 
     private void HandleButtonLikeClick(Theme theme)
     {
-        if(AccountController.user!=null)
-            theme.AddLike();
+    if (AccountController.user != null)
+        theme.AddLike();
     }
 
     private void HandleButtonDislikeClick(Theme theme)
     {
-        if (AccountController.user != null)
-            theme.AddDislike();
+    if (AccountController.user != null)
+        theme.AddDislike();
     }
 
-    private void HandleButtonEditClick(Theme theme)
+    private void HandleButtonEditClick(Theme theme, bool showElement)
     {
-        ToggleElement();
-        ThemeController.themeTextForEditor = theme.Text.ToString();
-        ThemeController.themeIdForEditor = theme.Id;
+        ToggleElement(showElement);
+        showElement = !showElement;
     }
+
+    private bool ToggleElement(bool showElement) => !showElement;
+
 
     private void HandleButtonDeleteArticleClick(Theme theme)
     {
-        if (AccountController.user != null || AccountController.user.Role.Equals("admin"))
-            theme.DropArticle();
+    if (AccountController.user != null || AccountController.user.Role.Equals("admin"))
+        theme.DropArticle();
     }
 
     private void HandleButtonCommentClick(Theme theme)
     {
-        if (AccountController.user != null)
-        {
-            Comment comment = new Comment(AccountController.user.Login, commentText);
-            theme.AddCommentToDb(theme ,comment);
-            commentText = string.Empty;
-        }
+    if (AccountController.user != null)
+    {
+        Comment comment = new Comment(AccountController.user.Login, commentText);
+        theme.AddCommentToDb(theme, comment);
+        commentText = string.Empty;
+    }
     }
 
     private void HandleButtonDeleteCommentClick(Theme theme, Comment comment)
     {
-        if(AccountController.user != null)
-        {
-            theme.RemoveComment(comment);
-        }
+    if (AccountController.user != null)
+    {
+        theme.RemoveComment(comment);
     }
-
+    }
 }

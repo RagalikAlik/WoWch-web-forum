@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QlcNNfJiS6f0XQekPqCzvWh7g4kj7OwLqPmyloYPRBk=",
+  "Hash": "P0lO/0NddBjRVAvVH9glvkXvTVDMgVtREoRp3Ry6fUM=",
   "Source": "Wow",
   "BasePath": "_content/Wow",
   "Mode": "Default",
@@ -2735,23 +2735,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\quill\\ui\\tooltip.js"
-    },
-    {
-      "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\Media\\seks.jpg",
-      "SourceId": "Wow",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\",
-      "BasePath": "_content/Wow",
-      "RelativePath": "Media/seks.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Media\\seks.jpg"
     },
     {
       "Identity": "C:\\Users\\nzavi\\source\\repos\\Wow\\Wow\\wwwroot\\Media\\SignInBackground.gif",

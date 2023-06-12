@@ -39,10 +39,6 @@
                         <a>@item.Creator</a>
                         <p class="article-header-text">@item.Header</p>
                         <span class="comment-timestamp">@item.ReleaseDate.ToString("dd.MM.yyyy HH:mm")</span>
-                        @if (AccountController.user != null && item.Creator.Equals(AccountController.user.Login))
-                        {
-                            <input type="button" value="Редактировать" @onclick="() => HandleButtonEditClick(item)" />
-                        }
                     </div>
                     <div class="article-text">
                         @item.Text

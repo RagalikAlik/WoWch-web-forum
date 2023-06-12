@@ -4,6 +4,7 @@
 @using Wow.Models;
 @using Wow.Controllers;
 @inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
 
 <head>
     <link rel="stylesheet" href="css/Registration.css">
@@ -41,6 +42,7 @@
     void Reg()
     {
         AccountController.Register(login, password, email);
+        JSRuntime.InvokeVoidAsync("alert", "Вы успешно зарегистрировались.");
         Navigation.NavigateTo("/");
     }
 }
