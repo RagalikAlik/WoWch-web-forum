@@ -527,6 +527,21 @@ form{
     transition: background-color 0.3s ease;
 }
 
-    .category-button:hover {
-        background-color: #e9e9e9;
-    }
+.category-button:hover {
+    background-color: #e9e9e9;
+}
+
+.image-lich {
+    position: fixed;
+    transform: scaleX(-1);
+}
+
+.editor-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.dancing-dworf{
+    width: 400px;
+    height: 400px;
+}
